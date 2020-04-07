@@ -1,0 +1,335 @@
+%!TEX root = ../csuthesis_main.tex
+% 论文正文是主体，主体部分应从另页右页开始，每一章应另起页。一般由序号标题、文字叙述、图、表格和公式等五个部分构成。
+\section{绪论}
+\subsection{研究背景与意义}
+
+目的是创建一个符合中南大学研究生学位论文（博士）撰写规范的LaTeX模板，解决学位论文撰写时格式调整的痛点。
+
+已有珠玉在前，我们之所以还要重新造轮子，主要是参考了2020年4月2号学校下发的[《中南大学研究生学位论文撰写规范》中大研字【2020】30号]( http://oa.its.csu.edu.cn/Home/ReleaseMainText/909CD53BF50943CD97B83C352032FEA4 )，重新修改了页面布局、字体类型和大小、标题内容，以期做到与 Word 模板尽可能的相似。主要修改如下：
+\begin{itemize}
+\item 增加页眉信息：中南大学博士论文与右侧的章节名保持一致，以及无需号章节名保持一致;
+\item 增加中英文摘要至目录，并保持与章节名昨对其;
+\item 参考文献完全依照国标 gbt7714-2005，修正了部分 Bug，提供了新的引用命令；
+\item 按照最新版本要求，在声明扉页前后各增加一页空白页，保证装订单独成页；
+\item 章节标题居中，并改成‘第1章’样式；
+\item 目录中，将原章节标题换成‘第几章’样式，字体按要求加粗；
+\item 中文摘要到目录结束用罗马数字编写页码，小五号Times New Roman,居中；
+\item 增加插图索引和表格索引；
+\end{itemize}
+
+\subsection{主要研究工作}
+我堂堂双一流高校竟然没有官方研究生论文LaTeX模板！！！虽然我LaTeX水平也很水……但是通过大量debug也勉强给大家凑出来一个格式绝对标准的LaTeX模板，模板代码丑就丑吧，能用就行。写了大量注释，有一点LaTeX基础就可以根据自己需要修改CSUthesis.cls文件。
+
+(1) 提供图片插入示例。
+
+(2) 提供表格插入示例。
+
+(3) 提供公式插入示例。
+
+(4) 提供参考文献插入示例。
+
+\subsection{论文组织结构}
+
+全文内容共六章，具体内容组织如下：
+
+第一章为绪论。
+
+第二章为图片插入示例。
+
+第三章为表格插入示例。
+
+第四章为公式插入示例。
+
+第五章为参考文献插入示例。
+
+第六章总结与展望，总结了本文的主要工作，展望了下一阶段的研究方向。
+
+\newpage
+
+\section{图像布局}
+
+
+\subsection{单图布局}
+
+
+
+\textbf{单图布局如图\ref{F.csu_single}所示。}
+
+\begin{figure}[hbt]
+\centering
+\includegraphics[width=0.5\textwidth]{csu.png}
+\caption{单图布局示例}
+\label{F.csu_single}
+\end{figure}
+
+\subsection{横排布局}
+
+\textbf{横排布局如图\ref{F.csu_row}所示。}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t]{0.24\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+         \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.24\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.24\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.24\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \caption{横排布局示例}
+    \label{F.csu_row}
+\end{figure}
+
+
+
+\subsection{竖排布局}
+\textbf{竖排布局如图\ref{F.csu_col}所示。}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t]{0.15\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}\\
+    \begin{subfigure}[t]{0.15\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \caption{竖排布局示例}
+    \label{F.csu_col}
+\end{figure}
+
+
+
+\subsection{竖排多图横排布局}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t]{0.13\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png} \vspace{-1ex} \vfill
+        \includegraphics[width=1\linewidth]{csu.png}
+         \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.13\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png} \vspace{-1ex} \vfill
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \caption{竖排多图横排布局}
+    \label{F.csu_col_row}
+\end{figure}
+
+\textbf{竖排多图横排布局如图\ref{F.csu_col_row}所示。注意看(a)、(b)编号与图关系。}
+
+
+\subsection{横排多图竖排布局}
+
+
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t]{0.3\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=0.45\linewidth]{csu.png}
+        \includegraphics[width=0.45\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}\\
+    \begin{subfigure}[t]{0.3\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=0.45\linewidth]{csu.png}
+        \includegraphics[width=0.45\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \caption{横排多图竖排布局}
+    \label{F.csu_row_col}
+\end{figure}
+
+\textbf{横排多图竖排布局如图\ref{F.csu_row_col}所示。注意看(a)、(b)编号与图关系。}
+
+\subsection{本章小结}
+本章示例图片布局。
+
+\newpage
+
+
+\section{表格插入示例}
+
+\begin{table}[htb]
+  \centering
+  \caption{学校文件里对表格的要求不是很高，不过按照学术论文的一般规范，表格为三线表。}
+  \label{T.example}
+  \begin{tabular}{llllll}
+  	\toprule
+   & A  & B  & C  & D  & E \\
+  \toprule
+1 	& 212 & 414 & 4 		& 23 & fgw	\\
+2 	& 212 & 414 & v 		& 23 & fgw	\\
+3 	& 212 & 414 & vfwe		& 23 & 嗯	\\
+4 	& 212 & 414 & 4fwe		& 23 & 嗯	\\
+5 	& af2 & 4vx & 4 		& 23 & fgw	\\
+6 	& af2 & 4vx & 4 		& 23 & fgw	\\
+7 	& 212 & 414 & 4 		& 23 & fgw	\\
+\bottomrule
+
+\end{tabular}
+\end{table}
+
+
+
+
+\textbf{表格如表\ref{T.example}所示，latex表格技巧很多，这里不再详细介绍。}
+
+
+\newpage
+
+\section{算法示例}
+
+
+\begin{algorithm}  
+	\caption{Fourier-Mellin Based KCF}  
+	\label{alg:A}  
+	\hspace*{0.02in}{\bf Input:}
+	Image $I$\\preprocessed kernelized template $T_\kappa$\\
+	\hspace*{0.02in}{\bf Output:} 
+	scale $\sigma$, angle $\theta$ relation between $I$ and $T$ 
+	
+	\begin{algorithmic}[1] 
+		\State {fourier transform: $F=\mathcal{F}(I)$}
+		\State {high pass filter: $F_h=\mathcal{H}(F)$\\$\mathcal{H}(x,y)=(1.0-cos(\pi x)cos(\pi y))(2.0-cos(\pi x)cos(\pi y))$}
+		\State {log-polar transform: $F_{lp}=\mathcal{L}(F_h)$}
+		\State {apply kernel function: $F_\kappa=\mathcal{K}(F_{lp})$}
+		\State {phase correlation: $(\Delta x, \Delta y)=\mathcal{C}(F_\kappa, T_\kappa)$}
+		\State {resolove scale and rotation:\\
+			$\theta=\alpha \Delta x$, $\sigma=log(\Delta y)$\\
+			where $\alpha$ is translation factor of pixel translation on fourier domain and polar angle on origin image
+		}
+	\end{algorithmic}  
+\end{algorithm}
+
+\newpage
+
+\section{公式插入示例}
+
+\begin{flalign}
+\text{P1: } &\min_{\eta,R_u>0,R_d>0}\big\{ T_{\text{latency}}(\eta,R_u,R_d)\big\}  \\
+&\text{s.t. }   0 \leq \eta \leq 1 \label{P1C1} 
+\end{flalign}
+
+\textbf{公式插入示例如公式(\ref{E.example})所示。}
+
+\begin{equation}
+\gamma_{x}=
+\left\{
+  \begin{array}{lr}
+  0, & {\rm if}~~\;|x| \leq \delta \\
+  x, & {\rm otherwise}
+  \end{array}
+\right.
+\label{E.example}
+\end{equation}
+
+\begin{flalign}
+&\text{P1:} \max_{\bigg\{\substack{P_{m,i},P_{n,i}\\
+		q_{m,i},q_{n,i}\\ \forall n,m,i}\bigg\}}\big[R_{\text{sum}}(P_{m,i},P_{n,i},q_{m,i},q_{n,i},\forall n,m,i)\big],  \\
+& \text{s.t.}~~q_{m,i}\in(0,1), q_{n,i}\in(0,1), \forall n,m,i, \label{allocons1} \\
+& \hspace{1.5em} ~0\leq \sum_{i=1}^Rq_{n,i}P_{n,i}\leq P_n^{sum}, \forall n, \label{powercons1}  \\ 
+& \hspace{1.5em} ~0\leq \sum_{i=1}^Rq_{m,i}P_{m,i}\leq P_m^{sum}, \forall m, \label{powercons2} \\ 
+& \hspace{1.5em} ~\sum_{i=1}^Rq_{n,i}\leq 1,\sum_{i=1}^Rq_{m,i}\leq 1,\forall m,n, \label{RBcons} \\ 
+& \hspace{1.5em} ~\sum_{n=1}^Nq_{n,i}\leq 1,\sum_{m=1}^Mq_{m,i}\leq 1,\forall i, \label{RBcons2} \\
+& \hspace{1.5em} ~C_{m,BS,i}(P_{m,i},q_{m,i})\geq\varepsilon_{m,i},\forall m, \label{capcons}
+\end{flalign}
+
+\newpage
+
+\section{参考文献插入示例}
+
+LaTeX\cite{lamport1994latex}插入参考文献最方便的方式是使用bibliography\cite{pritchard1969statistical}，大多数出版商的论文页面都会有导出bib格式参考文献的链接，把每个文献的bib放入``thesis-references''，然后用bibkey即可插入参考文献。
+
+中文文献\cite{zh-book-1}
+
+中文右上角\citess{shiweisong2019},只需要在在现有的cite后加“ss”即可。
+
+
+
+\newpage
+
+
+\section{总结与展望}
+
+\noindent{纯数字编号}
+\begin{enumerate}
+ \item XXXXXXXXXX
+ \label{item1}
+ \item XXXXXXXXXX
+ \item XXXXXXXXXX
+\end{enumerate}
+罗马编号
+\begin{enumerate}[label=(\roman*)]
+ \item XXXXXXXXXX
+ \label{item2}
+ \item XXXXXXXXXX
+ \item XXXXXXXXXX
+\end{enumerate}
+括号编号
+\begin{enumerate}[label=(\arabic*)]
+ \item XXXXXXXXXX
+ \label{item3}
+ \item XXXXXXXXXX
+ \item XXXXXXXXXX
+\end{enumerate}
+半括号编号
+\begin{enumerate}[label=\arabic*)]
+ \item XXXXXXXXXX
+ \label{item4}
+ \item XXXXXXXXXX
+ \item XXXXXXXXXX
+\end{enumerate}
+小字母编号
+\begin{enumerate}[label=\alph*)]
+ \item XXXXXXXXXX
+ \label{item5}
+ \item XXXXXXXXXX
+ \item XXXXXXXXXX
+\end{enumerate}
+
+引用测试,正如\ref{item1}、\ref{item2}、\ref{item3}、\ref{item4}、\ref{item5}所示
+
+\subsection{工作展望}
+手动编号 %（不推荐,无法被交叉引用）
+\par
+本课题针对XX，鉴于XXX，对XX进行了提高，但是XXX，所以有如下XX：
+
+（1）目前XX虽然XX，但是XX仍然XX，所以XX仍然是一个值得XX的问题。
+
+（2）随着XX，XX具有XX的问题，仍值得进一步XX。
+
+（3）本课题在XX有了XX，但是XX的XX还存在XX，所以XX。
+
+
+\newpage

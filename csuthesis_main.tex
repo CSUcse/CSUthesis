@@ -1,0 +1,203 @@
+% !TEX program = xelatex
+\documentclass{CSUthesis}
+
+
+
+
+\include{content/info}
+
+% lipsum
+\newcommand{\lipsum} {
+	这是一段随机插入的文本，用来填充模板布局，感受模板视觉效果。
+	
+	中南大学坐落在中国历史文化名城──湖南省长沙市，占地面积5886亩，建筑面积276万平方米，跨湘江两岸，依巍巍岳麓，临滔滔湘水，环境幽雅，景色宜人，是求知治学的理想园地。
+	中南大学是教育部直属全国重点大学、国家“211工程”首批重点建设高校、国家“985工程”部省重点共建高水平大学和国家“2011计划”首批牵头高校，2017年9月经国务院批准入选世界一流大学A类建设高校。现任校党委书记易红、校长田红旗。
+	中南大学由原湖南医科大学、长沙铁道学院与中南工业大学于2000年4月合并组建而成。原中南工业大学的前身为创建于1952年的中南矿冶学院，原长沙铁道学院的前身为创建于1953年的中南土木建筑学院，两校的主体学科最早溯源于1903年创办的湖南高等实业学堂的矿科和路科。原湖南医科大学的前身为1914年创建的湘雅医学专门学校，是我国创办最早的西医高等学校之一。
+	中南大学秉承百年办学积淀，顺应中国高等教育体制改革大势，弘扬以“知行合一、经世致用”为核心的大学精神，力行“向善、求真、唯美、有容”的校风，坚持自身办学特色，服务国家和社会重大需求，团结奋进，改革创新，追求卓越，综合实力和整体水平大幅提升。
+	
+	
+	这是一段随机插入的文本，用来填充模板布局，感受模板视觉效果。
+}
+
+\begin{document}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 封面
+	% -----------------------------------------------%
+	\makecoverpage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 前置部分的页眉页脚设置
+	% -----------------------------------------------%
+	\newpage
+	% 正文和后置部分用阿拉伯数字编连续码，前置部分用罗马数字单独编连续码（封面除外）。
+	% 设置封面页后的页码
+	%\pagenumbering{Roman} % 大写罗马字母
+	%\setcounter{page}{1} % 从1开始编号页码
+	% 设置页眉和页脚 
+	\pagestyle{fancy}
+	% 正文以前部分无需页眉
+	\fancyhf{} % 清空原有格式
+	\renewcommand{\headrulewidth}{0pt}
+	% 封面页无需页码，其他前置部分需要（按此理解扉页也是要页码的）。
+	%\fancyhf[CF]{\thepage} % 所有（奇数和偶数）中间页脚
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 扉页 
+	% -----------------------------------------------%
+	\maketitlepage
+	\newpage
+	
+	%增加一页空白页，扉页背面，保证其单独成页
+	\clearpage
+	\phantom{s}
+	\clearpage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 声明页
+	% -----------------------------------------------%
+	\announcement
+	\newpage
+	
+	%增加一页空白页，声明页背面，保证其单独成页
+	\clearpage
+	\phantom{s}
+	\clearpage
+	
+	%% 设置摘要后的页码
+	\fancyhf[CF]{\thepage} % 所有（奇数和偶数）中间页脚
+	\pagenumbering{Roman} % 大写罗马字母
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 中文摘要
+	% -----------------------------------------------%
+	%\addcontentsline{toc}{abstractcn}{tableofcontents}
+	\phantomsection                %% 解决目录中超链接地址错误问题
+	\addcontentsline{toc}{section}{\hspace*{-2.5em}{摘要}} %%增加摘要至目录且与第一章对齐
+	\include{content/abstractcn}
+	
+	\newpage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 英文摘要
+	% -----------------------------------------------%
+	%\addcontentsline{toc}{abstracten}{tableofcontents}
+	\phantomsection                %% 解决目录中超链接地址错误问题
+	\addcontentsline{toc}{section}{\hspace*{-2.5em}{ABSTRACT}}
+	\include{content/abstracten}
+	\newpage
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 正文页眉页脚
+	% -----------------------------------------------%
+	\setcounter{page}{1} % 重置目录页码为小写罗马字体
+	\pagenumbering{roman} % 设置页码为小写罗马字体
+	% 设置页眉和页脚 %
+	\pagestyle{fancy}
+	\fancyhf[CF]{\thepage} % 所有（奇数和偶数）中间页脚
+	
+	% 目录
+	% -------------------------------------------%
+	%增加目的到目录索引
+	\phantomsection                %% 解决目录中超链接地址错误问题
+	\addcontentsline{toc}{section}{\hspace*{-2.5em}{目录}} %%\hspace*{-2.5em}主要解决没有序号目录与章节对齐问题，临时设置
+	{
+		\renewcommand{\contentsname}{\hfill \heiti \zihao{3} 目\quad 录\hfill}  
+		\renewcommand*{\baselinestretch}{1.0}   % 行间距
+		\tableofcontents
+	}
+	
+	\newpage
+	
+	
+	% 插图索引
+	% -------------------------------------------%
+	{
+		\renewcommand{\listfigurename}{\hfill \heiti \zihao{3} 插图索引\hfill}  
+		%%设置插图索引的 图 标签
+		\let\oldnumberline\numberline%
+		\renewcommand{\numberline}{\figurename~\oldnumberline}
+		%增加图目录
+		\listoffigures
+	}
+	
+	\newpage
+	
+	% 表格索引
+	% -------------------------------------------%
+	{
+		\renewcommand{\listtablename}{\hfill \heiti \zihao{3} 表格索引\hfill}  
+		%%设置表格索引的 表 标签
+		\let\oldnumberline\numberline%
+		\renewcommand{\numberline}{\tablename~\oldnumberline}
+		%增加表目录
+		\listoftables
+	}
+	
+	\newpage
+	
+	
+	% 去掉页眉章节序号后面的“.”
+	%\renewcommand{\sectionmark}[1]{\markboth{\thesection~ #1}{}} 
+	\renewcommand{\sectionmark}[1]{\markboth{第\,\thesection\,章~ #1}{}} 
+	
+	
+	\renewcommand{\headrulewidth}{1pt}
+	\fancyhf[RH]{\songti \zihao{5} \leftmark} % 设置所有（奇数和偶数）右侧页眉
+	\fancyhf[LH]{\songti \zihao{5} 中南大学博士学位论文} % 设置所有（奇数和偶数）左侧页眉
+	% 正文内容 
+	% --------------------------------------------%
+	\setcounter{page}{1} % 重置页码编号
+	\pagenumbering{arabic} % 设置页码编号为阿拉伯数字
+	
+	% 可以使用include命令导入tex文件，从而避免过多修改本文件。
+	
+	% 论文正文是主体，主体部分应从另页右页开始，每一章应另起页。一般由序号标题、文字叙述、图、表格和公式等五个部分构成。
+	
+	% 重新设置正文行间距，因为前置部分设置时候行间距被改过
+	\renewcommand*{\baselinestretch}{1.0}   % 几倍行间距
+	\setlength{\baselineskip}{20pt}         % 基准行间距
+	
+	% 正文
+	\include{content/content}
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 临时标签，用于编译时追踪正文末尾
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% 后续内容，标题三号黑体居中，章节无编号
+	% --------------------------------------------%
+	
+	% https://www.zhihu.com/question/29413517/answer/44358389 %
+	% 说明如下：
+	% secnumdepth 这个计数器是 LaTeX 标准文档类用来控制章节编号深度的。在 article 中，这个计数器的值默认是 3，对应的章节命令是 \subsubsection。也就是说，默认情况下，article 将会对 \subsubsection 及其之上的所有章节标题进行编号，也就是 \part, \section, \subsection, \subsubsection。LaTeX 标准文档类中，最大的标题是 \part。它在 book 和 report 类中的层级是「-1」，在 article 类中的层级是「0」。这里，我们在调用 \appendix 的时候将计数器设置为 -2，因此所有的章节命令都不会编号了。不过，一般还是会保留 \part 的编号的。所以在实际使用中，将它设置为 0 就可以了。
+	
+	% 在修改过程中请注意不要破环命令的完整性
+	
+	\renewcommand\appendix{\setcounter{secnumdepth}{-2}}
+	\appendix
+	
+	% 主文件有代码去掉页眉章节编号的“.”，但这会因为bug导致无编号章节显示一个错误编号，所以这里在无编号章节之前再次重定义sectionmark。
+	%\renewcommand{\sectionmark}[1]{\markright{#1}}
+	\renewcommand{\sectionmark}[1]{\markboth{#1}{#1}}
+	\renewcommand{\subsectionmark}[1]{\markright{\leftmark}}
+	\renewcommand{\subsubsectionmark}[1]{\markright{\leftmark}}
+	
+	% section 标题从这里往后改为三号黑体居中
+	\titleformat{\section}{\centering \zihao{3}\heiti \bfseries }{\thesection}{1em}{}
+	
+	% \section{参考文献} % bibliography会自动显示参考文献四个字
+	
+	\addcontentsline{toc}{section}{\hspace*{-2.5em}{参考文献}} % 由于参考文献不是section，这句把参考文献加入目录
+	% \nocite{*} % 该命令用于显示全部参考文献，即使文中没引用
+	% cls文件中已经引入package，这里不需要调用 \bibliographystyle 了。
+
+	\zihao{5} \setmainfont{Times New Roman} 
+	\bibliographystyle{gbt7714-2005} 
+    \bibliography{thesis-references}
+	\newpage
+	
+	
+
+	\include{content/additional}
+	
+\end{document}
