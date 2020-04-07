@@ -1,34 +1,51 @@
-# 中南大学学位论文Tex模版
-## 欢迎Contribute，欢迎一起讨论学位论文 LaTeX 知识
+# 欢迎使用中南大学研究生学位论文LaTex模版（博士和硕士）
 
-欢迎对 LaTeX 感兴趣的同学参与项目维护，添加更多features，包括不限于下列内容：
+## Prior work on CSU thesis template
 
-TODO: 
+本示例模板是应用中南大学论文（非官方）LaTeX 文档类 CSUthesis 的一个完整实现。演示了排版中常用的例子，包括公式、表格、算法、参考文献等。 用户可以参考或者直接基于此示例文档撰写论文。
 
-- 本、硕、博模板的基于参数or配置文件的转换
-- 涉密、定向类型论文的基于参数or配置文件的转换
-- 正式版本与盲审模式的基于参数的转换
-- 对常用撰写环境 Makefile/vscode/sublime 等的更友好的支持
-- 对不同操作系统的更友好的支持
-- 对于不同撰写环境、操作系统的傻瓜式教程（基于markdown）
+请注意 CSUthesis 目前仅支持 XeTeX 引擎，字符编码仅支持 UTF-8。
 
-中南大学学位论文 LaTeX 模板交流 QQ群： 1057284351
+非常感谢郭大侠提供基础[中南大学学位论文LaTex模板](https://github.com/CSGrandeur/CSU-Thesis-LaTeX-Template)，其依据[《中南大学研究生学位论文撰写规范》中大研字【2016】166号](http://gra.its.csu.edu.cn/yjsy/pygl/wjtzxq54858_3_6.html)编写,后续的修改也是再次基础上。
+## Motivation
+目的是创建一个符合中南大学研究生学位论文（博士）撰写规范的LaTeX模板，解决学位论文撰写时格式调整的痛点。
 
-## 项目起源
+已有珠玉在前，我们之所以还要重新造轮子，主要是参考了2020年4月2号学校下发的[《中南大学研究生学位论文撰写规范》中大研字【2020】30号](http://oa.its.csu.edu.cn/Home/ReleaseMainText/909CD53BF50943CD97B83C352032FEA4)，重新修改了页面布局、字体类型和大小、标题内容，以期做到与 Word 模板尽可能的相似。主要修改如下：
++ 增加页眉信息：中南大学博士论文与右侧的章节名保持一致，以及无需号章节名保持一致;
++ 增加中英文摘要至目录，并保持与章节名昨对其;
++ 参考文献完全依照国标 gbt7714-2005，修正了部分 Bug，提供了新的引用命令；
++ 按照最新版本要求，在声明扉页前后各增加一页空白页，保证装订单独成页；
++ 章节标题居中，并改成‘第1章’样式；
++ 目录中，将原章节标题换成‘第几章’样式，字体按要求加粗；
++ 中文摘要到目录结束用罗马数字编写页码，小五号Times New Roman,居中；
++ 增加插图索引和表格索引；
 
-LaTeX利用设置好的模板，可以编译为格式统一的pdf。
+## 编译环境和工具
 
-目前国内大多出版社与高校仍在使用word，word由于其强大的功能与灵活性，在新手面对形式固定的论文时，排版、编号、参考文献等简单事务反而会带来很多困难与麻烦，对于一些需要通篇修改的问题，要想达到LaTeX的效率，对word使用者来说需要具有较高的技能水平。
+### 编译环境
+由于 CTeX 宏集的行为会受编译方式影响，比如不同编译方式下 CTeX 宏集底层的中文支持方式也会不同。LaTeX 和 pdfLaTeX 为 CJK 宏包，XeLaTeX 为 xeCJK 宏包，LuaLaTeX 为 LuaTeX-ja 宏包；使用 XeLaTeX 和 LuaLaTeX 编译时，CTeX 宏集使用 UTF-8 编码，LaTeX 和 pdfLaTeX 时使用 GBK 编码。最终的排版效果因不同编译方式而已。
 
-为了能把主要精力放在论文撰写上，许多国际期刊和高校都支持LaTeX的撰写与提交，新手不需要关心格式问题，只需要按部就班的使用少数符号标签，即可得到符合要求的文档。且在需要全篇格式修改时，更换或修改模板文件，即可直接重新编译为新的样式文档，这对于word新手使用word的感受来说是不可思议的。
+**本模板唯一推荐使用的是 XeLaTeX**，可以获得与 Word 模板100%接近的效果。发行版为 [TeXLive](http://tug.org/texlive/)，支持GNU/Linux, macOS, 和Windows操作系统，按需下载。这里暂不推荐其他发行版，毕竟按照 [L 叔](http://liam0205.me/)的名言
 
-本项目的目的是为了创建一个符合中南大学研究生学位论文（博士）撰写规范的TeX模板，解决学位论文撰写时格式调整的痛点。
+> 选择 TeX Live，选择简单的人生；
+>
+> 选择 MiKTeX，选择麻烦的人生；
+>
+> 选择 CTeX 套装，选择崩溃的人生。
 
-本模板依照[《中南大学研究生学位论文撰写规范》中大研字【2016】166号](http://gra.its.csu.edu.cn/yjsy/pygl/wjtzxq54858_3_6.html)编写。
+### 写作工具
+
+推荐使用2种常用写作工具：
++ [**TeXstudio**](http://texstudio.sourceforge.net/)：TeXstudio is an integrated writing environment for creating LaTeX documents. Our goal is to make writing LaTeX as easy and comfortable as possible.（Windows上面支持最完善，macOS也支持）
++ **Sublime+LaTex**：[Windows部署指南](https://blog.csdn.net/qazxswed807/article/details/51234834)和[macOS部署指南](https://www.readern.com/sublime-text-latex-chinese-under-mac.html)。
+### 文献管理工具
+如果你使用LaTex写作，强烈建议你使用[JabRef](https://www.jabref.org/)管理你的文献。
+
+[JabRef安装及使用指南。](https://blog.csdn.net/weixin_44191286/article/details/85698921)
 
 ## 主要内容
 
-![cover](images/cover.png)
+![cover](images/csulg.jpg)
 
 1. 封面、扉页；
 2. 学位论文原创性声明和版权使用授权书；
@@ -44,11 +61,11 @@ LaTeX利用设置好的模板，可以编译为格式统一的pdf。
 
 ## 版本状况
 
-完整支持学术学位博士论文。
+完全支持新版本撰写规范，支持普通学术学位博士论文。
 
 其他涉密、定向等可能需要修改封面的情况，需要自行修改`CSUthesis.cls`文件。
 
-硕士也可按需修改`CSUthesis.cls`文件。
+硕士版本也可按需修改`CSUthesis.cls`文件。
 
 以后版本会增加支持各类学位的配置文件（如果我有空的话）。
 
@@ -62,10 +79,26 @@ LaTeX利用设置好的模板，可以编译为格式统一的pdf。
 
 对LaTeX有所了解的同学，也可按需修改这个文件。如果这个文件的样式设计有什么bug，欢迎在issue里提出。
 
-### `gbt7714-unsrt.bst`和`gbt7714.sty`两个文件
+### 参考文献
+关于参考文献的设置如下，使用了 natbib 宏包来定制参考文献，除了常用的 `\ cite{}` 命令来提供 full size 的参考文献引用，还提供了 `\citess{}` 命令用于提供上标（右上角）时候的引用（ss 是 superscript 的缩写）。最后一句代码用于调节参考文献条目之间距离。
 
-来自项目[CTeX-org/gbt7714-bibtex-style](https://github.com/CTeX-org/gbt7714-bibtex-style)，是参考文献的样式，与学校论文撰写规范一致。
+```latex
+\usepackage[square,numbers,sort&compress]{natbib}
+\newcommand{\citess}[1]{\textsuperscript{\cite{#1}}}
+%\setlength{\bibsep}{1pt plus 0.3ex}
+```
+由于暂时未发现GBT7714-2005和GBT7714-2015的重大区别，由于时间关系，暂时依然使用GBT7714-2005.bst文献规则。
+参考文献的字体、大小和样式风格，可以在 .tex 文件中下面代码里调节。gbt7714-2005.bst 文件基于南京大学计算机科学与技术系胡海星博士的 [GBT7714-2005-BibTeX-Style 项目](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style)，在此基础上稍做了一点修改，使得英文人名从全部字母大写变为只有首字母大写。
 
+参考文献的行距、字体和大小可以在下列代码中修改
+
+```latex
+\begin{spacing}{1.0}  
+  \zihao{5} \songti   
+  \bibliographystyle{gbt7714-2005}
+  \bibliography{ref}
+\end{spacing}
+```
 
 ### `content`目录
 
@@ -105,14 +138,12 @@ Windows下可以使用`TexMaker`,`TexStudio`等IDE，选中`xelatex`编译器进
 使用高级文本编辑器，如sublime等，否则可能因为ANSI、UTF-8等编码格式问题编译失败。
 
 
-## 一些毕业流程上与word差异的考虑
 
-想到多少补充多少吧。
+## 反馈与贡献
+由于新版本的撰写指南刚下发，难免有些地方错误，请及时反馈！
 
-### 知网查重
-知网查重有识别参考文献的功能，但是不怎么成熟。一般word编译的pdf能识别出来，但是有的识别不出来。这个latex模板的pdf，知网查重会把参考文献标红。
+本模版是由诸多感兴趣的同学一起维护的开源项目，我们非常欢迎问题反馈和新的贡献者！
 
-不过不用担心，目前中南查重规则是要去掉参考文献的pdf。参考[`official_documents/中南大学研究生学位论文“学术不端文献检测系统”使用管理办法.mht`](http://gra.its.csu.edu.cn/yjsy/pygl/wjtzxq54863_3_6.html)
 
 
 
