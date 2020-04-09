@@ -341,7 +341,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     \setlength{\parindent}{2em} % 首行缩进
     {
         \zihao{4}
-        本人郑重声明，所呈交的学位论文是本人在指导教师指导下进行的研究工作及取得的研究成果。尽我所知，除了论文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得中南大学或其他教育机构的学位或证书而使用过的材料。与我共同工作的同志对本研究所作的贡献均已在论文中作了明确的说明。
+        本人郑重声明，所呈交的学位论文是本人在导师指导下进行的研究工作及取得的研究成果。尽我所知，除了论文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得中南大学或其他教育机构的学位或证书而使用过的材料。与我共同工作的同志对本研究所作的贡献均已在论文中作了明确的说明。
 
         申请学位论文与资料若有不实之处，本人承担一切相关责任。
 
@@ -440,7 +440,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     \vspace{-3pt}
     \begin{center}\TimesNewRoman \zihao{3} \bfseries \@titleen \end{center}
     \vspace{23pt}
-    \noindent {\TimesNewRoman \zihao{4} \bfseries Abstract:~} % 摘要俩字为四号黑体
+    \noindent {\TimesNewRoman \zihao{4} \bfseries Abstract:} % 摘要俩字为四号黑体
     \TimesNewRoman \zihao{4} \noindent % 内容为四号Times New Roman
 }
 {
