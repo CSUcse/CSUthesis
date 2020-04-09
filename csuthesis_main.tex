@@ -207,13 +207,16 @@
 % cls文件中已经引入package，这里不需要调用 \bibliographystyle 了。
 % \bibliographystyle{gbt7714-2005} 
 {~}
-\vspace{-10pt}
+\vspace{-16pt}
+
 \zihao{5} \setmainfont{Times New Roman} 
 \bibliographystyle{gbt7714-2005} 
 \bibliography{thesis-references}
 
 \newpage
 
+\titleformat{\section}{\centering \zihao{3} \bfseries \heiti}{\thesection}{1em}{}
+\titlespacing*{\section} {0pt}{18pt}{32pt}
 \titleformat{\subsection}{\zihao{-4} \songti}{\thesubsection}{1em}{}
 \titlespacing*{\subsection} {2em}{0pt}{0pt}
 \titleformat{\subsubsection}{\zihao{-4} \songti}{\thesubsubsection}{1em}{}
