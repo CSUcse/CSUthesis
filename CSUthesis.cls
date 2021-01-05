@@ -59,7 +59,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % 设置标题格式
 \RequirePackage{titlesec}
 % 超链接 hyperref 的设置
-\RequirePackage{hyperref}
+%\RequirePackage{hyperref}
+\RequirePackage[colorlinks,linkcolor=black,anchorcolor=black,citecolor=black,baseurl=empty]{hyperref}
 % 插入图片
 \RequirePackage{graphicx}
 % 表格
