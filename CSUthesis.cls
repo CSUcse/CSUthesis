@@ -504,7 +504,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
                {\zihao{-4} \heiti} % 章名设置为黑小四
                {\contentspush{第\thecontentslabel\ 章\quad}} % 第x章
                {}
-               {\titlerule*[1em]{$\cdot$}\contentspage}
+               {\titlerule*[0.5em]{$\cdot$}\contentspage}
 % \titlecontents{section}
 %               [0.75em] % 按样例目录左侧是和前置部分文字左侧对齐的
 %               {\zihao{-4} \songti}
@@ -519,14 +519,14 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     {\zihao{-4} \songti} % note that 3.8 = 1.5 + 2.3
     {\contentslabel{2.2em}}
     {\hspace*{-3.5em}}
-    {\titlerule*[1em]{$\cdot$}\contentspage}
+    {\titlerule*[0.5em]{$\cdot$}\contentspage}
 
 \titlecontents{subsubsection}
     [6em]
     {\zihao{-4} \songti} % note that 3.8 = 1.5 + 2.3
     {\contentslabel{3.0em}}
     {\hspace*{-5em}}
-    {\titlerule*[1em]{$\cdot$}\contentspage}
+    {\titlerule*[0.5em]{$\cdot$}\contentspage}
 
 % 6. 符号说明（必要时）%
 % ---------------------------------------------------------%
