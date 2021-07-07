@@ -111,7 +111,8 @@
 	{~}
 	\vspace{-10pt}
 	\renewcommand{\listfigurename}{\hfill \heiti \zihao{3} 插图索引\hfill ~\\}  
-	% 在目录中添加插图索引页码，按需确定是否注释下面一行
+	% 在目录中添加插图索引页码，按需确定是否注释下面两行
+	\phantomsection                %% 解决目录中超链接地址错误问题
 	\addcontentsline{toc}{section}{插图索引} 
 	%%设置插图索引的 图 标签
 	\let\oldnumberline\numberline%
@@ -130,7 +131,8 @@
 	{~}
 	\vspace{-10pt}
 	\renewcommand{\listtablename}{\hfill \heiti \zihao{3} 表格索引\hfill ~\\}  
-	 % 在目录中添加表格索引页码，按需确定是否注释下面一行
+	 % 在目录中添加表格索引页码，按需确定是否注释下面两行
+	 \phantomsection                %% 解决目录中超链接地址错误问题
 	\addcontentsline{toc}{section}{表格索引}
 	%%设置表格索引的 表 标签
 	\let\oldnumberline\numberline%
