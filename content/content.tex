@@ -7,6 +7,9 @@
 
 已有珠玉在前，我们之所以还要重新造轮子，主要是参考了2020年4月2号学校下发的[《中南大学研究生学位论文撰写规范》中大研字【2020】30号]( http://oa.its.csu.edu.cn/Home/ReleaseMainText/909CD53BF50943CD97B83C352032FEA4 )，重新修改了页面布局、字体类型和大小、标题内容，以期做到与 Word 模板尽可能的相似。主要修改如下：
 \begin{itemize}
+\item  修订多个子图Caption居中问题；
+\item 依据专家意见调整成果与致谢部分间距，并增加目录中的点密度；
+\item 按照图书馆最新要求（2020年12月份），去除目录中红色边框；
 \item 增加页眉信息：中南大学博士论文与右侧的章节名保持一致，以及无需号章节名保持一致;
 \item 增加中英文摘要至目录，并保持与章节名昨对其;
 \item 参考文献完全依照国标 gbt7714-2005，修正了部分 Bug，提供了新的引用命令；
@@ -70,24 +73,28 @@
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}[t]{0.24\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
         \begin{minipage}[b]{1\linewidth}
         \includegraphics[width=1\linewidth]{csu.png}
          \caption{}
         \end{minipage}
     \end{subfigure}
     \begin{subfigure}[t]{0.24\linewidth}
+    \captionsetup{justification=centering} %子图caption居中
         \begin{minipage}[b]{1\linewidth}
         \includegraphics[width=1\linewidth]{csu.png}
         \caption{}
         \end{minipage}
     \end{subfigure}
     \begin{subfigure}[t]{0.24\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
         \begin{minipage}[b]{1\linewidth}
         \includegraphics[width=1\linewidth]{csu.png}
         \caption{}
         \end{minipage}
     \end{subfigure}
     \begin{subfigure}[t]{0.24\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
         \begin{minipage}[b]{1\linewidth}
         \includegraphics[width=1\linewidth]{csu.png}
         \caption{}
@@ -127,6 +134,7 @@
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}[t]{0.13\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
         \begin{minipage}[b]{1\linewidth}
         \includegraphics[width=1\linewidth]{csu.png} \vspace{-1ex} \vfill
         \includegraphics[width=1\linewidth]{csu.png}
@@ -134,6 +142,7 @@
         \end{minipage}
     \end{subfigure}
     \begin{subfigure}[t]{0.13\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
         \begin{minipage}[b]{1\linewidth}
         \includegraphics[width=1\linewidth]{csu.png} \vspace{-1ex} \vfill
         \includegraphics[width=1\linewidth]{csu.png}
@@ -154,6 +163,7 @@
 \begin{figure}[!htb]
     \centering
     \begin{subfigure}[t]{0.3\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
         \begin{minipage}[b]{1\linewidth}
         \includegraphics[width=0.45\linewidth]{csu.png}
         \includegraphics[width=0.45\linewidth]{csu.png}
@@ -161,6 +171,7 @@
         \end{minipage}
     \end{subfigure}\\
     \begin{subfigure}[t]{0.3\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
         \begin{minipage}[b]{1\linewidth}
         \includegraphics[width=0.45\linewidth]{csu.png}
         \includegraphics[width=0.45\linewidth]{csu.png}
