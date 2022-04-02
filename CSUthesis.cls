@@ -693,6 +693,14 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \let\l@table\l@figure
 \makeatother
 
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+	\hbox{}
+	\thispagestyle{fancy}
+	\newpage
+	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother \clearpage{\pagestyle{fancy}\cleardoublepage}
+
 % 8. 参考文献 %
 % ------------------------------------------------------%
 % TODO %
