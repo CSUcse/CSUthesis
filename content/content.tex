@@ -7,6 +7,7 @@
 
 已有珠玉在前，我们之所以还要重新造轮子，主要是参考了2020年4月2号学校下发的[《中南大学研究生学位论文撰写规范》中大研字【2020】30号]( http://oa.its.csu.edu.cn/Home/ReleaseMainText/909CD53BF50943CD97B83C352032FEA4 )，重新修改了页面布局、字体类型和大小、标题内容，以期做到与 Word 模板尽可能的相似。主要修改如下：
 \begin{itemize}
+\item  增加参考文献按国标 gbt7714-2015要求，只核对了常用的图书、中英文期刊，会议格式，其余未常使用的未进行核对（如有问题请改回gbt7714-2005）；
 \item  修订多个子图Caption居中问题；
 \item 依据专家意见调整成果与致谢部分间距，并增加目录中的点密度；
 \item 按照图书馆最新要求（2020年12月份），去除目录中红色边框；
@@ -281,13 +282,20 @@
 
 \section{参考文献插入示例}
 
-LaTeX\cite{lamport1994latex}插入参考文献最方便的方式是使用bibliography\cite{pritchard1969statistical}，大多数出版商的论文页面都会有导出bib格式参考文献的链接，把每个文献的bib放入``thesis-references''，然后用bibkey即可插入参考文献。
+LaTeX\cite{lamport1994latex}插入参考文献最方便的方式是使用bibliography\cite{pritchard1969statistical}，大多数出版商的论文页面都会有导出bib格式参考文献的链接，建议使用Jabref管理参考文献，把每个文献的bib放入``thesis-references''，然后用bibkey即可插入参考文献。
 
-中文文献\cite{zh-book-1}
+中文文献\cite{zh-book-1}，注意收到编辑因为的bibkey即可。
 
 可以将文献标注为右上角\citess{shiweisong2019},只需要在现有的cite后加“ss”即可。
 
+英文会议\cite{Kraus2021Current}, \cite{WuYangLuEtAl2021}.
 
+英文期刊\cite{LuoZengYuanEtAl2016}, \cite{Wu2022Boosting}.
+
+
+\textbf{特别强调：}从Google下载的bib也不一定全是对的，如发现有信息缺失，请下载原文核对。比如已发表的期刊，要包保证年、卷、标。
+
+\textbf{注意：}如发现替换后的参考文献没有更新，请删除主文件夹下xxx.bbl文件，重新编译即可。
 
 \newpage
 
