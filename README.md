@@ -30,8 +30,6 @@
 + 按文件要求修订学位论文原创性声明;
 + 根据需要调整合适的算法包;
 
-### To Do
-+ 将参考文献gbt7714-2005改为gbt7714-2015;
 
 ## 编译环境和工具
 
@@ -100,8 +98,9 @@
 \newcommand{\citess}[1]{\textsuperscript{\cite{#1}}}
 %\setlength{\bibsep}{1pt plus 0.3ex}
 ```
-由于暂时未发现GBT7714-2005和GBT7714-2015的重大区别，由于时间关系，暂时依然使用GBT7714-2005.bst文献规则。
-参考文献的字体、大小和样式风格，可以在 .tex 文件中下面代码里调节。gbt7714-2005.bst 文件基于南京大学计算机科学与技术系胡海星博士的 [GBT7714-2005-BibTeX-Style 项目](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style)，在此基础上稍做了一点修改，使得英文人名从全部字母大写变为只有首字母大写。
+GBT7714-2005和GBT7714-2015没有重大区别，参考文献的字体、大小和样式风格，可以在 .tex 文件中下面代码里调节。gbt7714-2005.bst 文件基于南京大学计算机科学与技术系胡海星博士的 [GBT7714-2005-BibTeX-Style 项目](https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style)，在此基础上稍做了一点修改，使得英文人名从全部字母大写变为只有首字母大写。
+其中，gbt7714-2015-little.bst: 英文人名只有首字母大写（默认）, gbt7714-2015-numerical.bst: 英文人名全部字母大写. 请大家按需选择。
+
 
 参考文献的行距、字体和大小可以在下列代码中修改
 
@@ -158,7 +157,7 @@ Windows下可以使用`TexMaker`,`TexStudio`等IDE，选中`xelatex`编译器进
 本模版是由诸多感兴趣的同学一起维护的开源项目，我们非常欢迎问题反馈和新的贡献者！
 
 ## 致谢
-Shaowen Xiong, CSU
+Shaowen Xiong, CSU;
 Shaoyong Li, CSU
 
 
