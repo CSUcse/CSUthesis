@@ -158,6 +158,7 @@ Windows下可以使用`TexMaker`,`TexStudio`等IDE，选中`xelatex`编译器进
 
 ## 致谢
 Shaowen Xiong, CSU;
+
 Shaoyong Li, CSU
 
 
