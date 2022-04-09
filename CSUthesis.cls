@@ -528,13 +528,23 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     {\hspace*{-5em}}
     {\titlerule*[0.5em]{$\cdot$}\contentspage}
 
+
 % 6. 符号说明（必要时）%
 % ---------------------------------------------------------%
-% TODO: 
 %
 % 如果论文中使用了大量的物理量符号、标志、缩略词、专门计量单位、自定义名词和术语等，应编写成注释说明汇集表，说明论文中所用符号所表示的意义及单位（或量纲）。若上述符号和缩略词使用数量不多，可以不设专门的注释说明汇集表，仅在论文中出现时加以说明。
 % “符号说明”四字居中（三号黑体）。
 
+\newenvironment{denotation} { % 定义符号说明环境
+	\setlength{\baselineskip}{20pt}         % 基准行间距
+	\renewcommand{\baselinestretch}{1.0}   % 几倍行间距
+	{~}
+	\vspace{-3pt}
+	%\vspace{-10pt}
+	\begin{center} \heiti \bfseries \zihao{3} 符号说明 \end{center}
+	%\renewcommand{\denotation\ctitle}{\centering \hfill \heiti \bfseries \zihao{3} 符号说明\hfill ~\\}
+	%\vspace{10pt}
+}
 
 % 7. 论文正文 %
 % -------------------------------------------------------%
