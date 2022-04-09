@@ -451,7 +451,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     \begin{flushleft}
 %		\vspace{10pt}
 %        \noindent {\zihao{4} \songti \@itemcountcn} \par % 图表统计信息为四号宋体
-%		\vspace{40pt}
+		\vspace{20pt}  %按要求上空两行
         \noindent {\TimesNewRoman \zihao{4} \bfseries Keywords:~} {\zihao{4} \@keywordsen} \par % 关键词为四号黑体，内容为四号宋体
         \noindent {\TimesNewRoman \zihao{4} \bfseries Classification:~} {\zihao{4} \@categoryen} \par % 分类号为四号黑体，内容为四号宋体
     \end{flushleft}
