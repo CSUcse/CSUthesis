@@ -7,6 +7,7 @@
 
 已有珠玉在前，我们之所以还要重新造轮子，主要是参考了2020年4月2号学校下发的[《中南大学研究生学位论文撰写规范》中大研字【2020】30号]( http://oa.its.csu.edu.cn/Home/ReleaseMainText/909CD53BF50943CD97B83C352032FEA4 )，重新修改了页面布局、字体类型和大小、标题内容，以期做到与 Word 模板尽可能的相似。主要修改如下：
 \begin{itemize}
+\item 修订算法在每个章节重新编号问题；
 \item 增加符号说明页和附录页（如果不需要，请在.cls文件对应处注释掉即可）；
 \item  增加参考文献按国标 gbt7714-2015要求，只核对了常用的图书、中英文期刊，会议格式，其余未常使用的未进行核对（如有问题请改回gbt7714-2005）；
 \item  修订多个子图Caption居中问题；
@@ -199,9 +200,9 @@
   \caption{表格为三线表斜体emph \emph{A}，A，斜体texit \textit{A}}
   \label{T.example}
   \begin{tabular}{llllll}
-  	\toprule
-   & \emph{A}A \textit{A}  & B  & C  & D  & E \\
   \toprule
+    & \emph{A}A \textit{A}  & B  & C  & D  & E \\
+  \midrule
 1 	& 212 & 414 & 4 		& 23 & fgw	\\
 2 	& 212 & 414 & v 		& 23 & fgw	\\
 3 	& 212 & 414 & vfwe		& 23 & 嗯	\\
@@ -214,10 +215,8 @@
 \end{tabular}
 \end{table}
 
-
-
-
 \textbf{表格如表\ref{T.example}所示，latex表格技巧很多，这里不再详细介绍。}
+
 
 
 \newpage
@@ -225,6 +224,7 @@
 \section{算法示例}
 
 
+\setcounter{algorithm}{0}
 \begin{algorithm}  
 	\caption{Fourier-Mellin Based KCF}  
 	\label{alg:A}  
@@ -245,6 +245,8 @@
 		}
 	\end{algorithmic}  
 \end{algorithm}
+
+\textbf{如算法\ref{alg:A}所示，latex算法技巧很多。按需调整，这里不再详细介绍。}
 
 \newpage
 
@@ -285,7 +287,7 @@
 
 LaTeX\cite{lamport1994latex}插入参考文献最方便的方式是使用bibliography\cite{pritchard1969statistical}，大多数出版商的论文页面都会有导出bib格式参考文献的链接，建议使用Jabref管理参考文献，把每个文献的bib放入``thesis-references''，然后用bibkey即可插入参考文献。
 
-中文文献\cite{zh-book-1}，注意收到编辑因为的bibkey即可。
+中文文献\cite{zh-book-1}，注意手动编辑bibkey为英文的即可。
 
 可以将文献标注为右上角\citess{shiweisong2019},只需要在现有的cite后加“ss”即可。
 
