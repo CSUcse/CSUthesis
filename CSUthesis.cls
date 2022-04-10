@@ -698,6 +698,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \@addtoreset{figure}{section}
 \@addtoreset{table}{section}
 \@addtoreset{equation}{section}
+\@addtoreset{algorithm}{section}
 %取消插图索引、表格索引的左缩进
 \renewcommand*\l@figure{\@dottedtocline{1}{0em}{2.3em}}% Default: 1.5em/2.3em
 \let\l@table\l@figure
