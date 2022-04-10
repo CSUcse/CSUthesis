@@ -212,19 +212,33 @@
 \titlespacing*{\section} {0pt}{18pt}{32pt}
 
 % \section{参考文献} % bibliography会自动显示参考文献四个字
-\phantomsection
-\addcontentsline{toc}{section}{参考文献} % 由于参考文献不是section，这句把参考文献加入目录
+
 % \nocite{*} % 该命令用于显示全部参考文献，即使文中没引用
 % cls文件中已经引入package，这里不需要调用 \bibliographystyle 了。
 % \bibliographystyle{gbt7714-2005} 
 {~}
 \vspace{-16pt}
 
-\zihao{5} \setmainfont{Times New Roman} 
+\phantomsection                                      %% 解决目录中超链接地址错误问题
+\addcontentsline{toc}{section}{参考文献} % 由于参考文献不是section，这句把参考文献加入目录
+\zihao{-4} \setmainfont{Times New Roman} 
 \bibliographystyle{gbt7714-2015-little} 
 \bibliography{thesis-references}
 
 \newpage
+% 附录
+
+\titleformat{\section}{\centering \zihao{3} \bfseries \heiti}{\thesection}{1em}{}
+\titlespacing*{\section} {0pt}{18pt}{32pt}
+\titleformat{\subsection}{\zihao{-4} \songti}{\thesubsection}{1em}{}
+\titlespacing*{\subsection} {2em}{0pt}{0pt}
+\titleformat{\subsubsection}{\zihao{-4} \songti}{\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection} {2em}{0pt}{0pt}
+
+\include{content/appendix}
+
+\newpage
+% 研究成果和致谢
 
 \titleformat{\section}{\centering \zihao{3} \bfseries \heiti}{\thesection}{1em}{}
 \titlespacing*{\section} {0pt}{18pt}{32pt}
