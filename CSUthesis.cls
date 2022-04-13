@@ -665,32 +665,54 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
 % 数学环境, 定理等设置 %
 % -------------------------------------------------------%
-% 数学定理相关的常量
-\newcommand*{\csu@cap@definition}{定义}
-\newcommand*{\csu@cap@theorem}{定理}
-\newcommand*{\csu@cap@lemma}{引理}
-\newcommand*{\csu@cap@corollary}{推论}
-\newcommand*{\csu@cap@assumption}{假设}
-\newcommand*{\csu@cap@conjecture}{猜想}
-\newcommand*{\csu@cap@axiom}{公理}
-\newcommand*{\csu@cap@principle}{定律}
-\newcommand*{\csu@cap@problem}{问题}
-\newcommand*{\csu@cap@example}{例}
-\newcommand*{\csu@cap@proof}{证明}
-\newcommand*{\csu@cap@solution}{解}
+\renewtheoremstyle{plain}
+{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\theorem@separator]}
+{\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ ##3\theorem@separator]}
+\theorembodyfont{\songti\rmfamily} % 设置定理内容为宋体
+\theoremheaderfont{\heiti\rmfamily} % 设置定理标题为黑体
+\theoremsymbol{$\blacksquare$} % 证明结束标识为黑色小方块
+\setlength{\theorempreskipamount}{0pt}
+\setlength{\theorempostskipamount}{-2pt}
+\setlength{\parindent}{2em}
+\arraycolsep=1.6pt
 
-\newtheorem{definition}{\csu@cap@definition}
-\newtheorem{theorem}{\csu@cap@theorem}
-\newtheorem{lemma}{\csu@cap@lemma}
-\newtheorem{corollary}{\csu@cap@corollary}
-\newtheorem{assumption}{\csu@cap@assumption}
-\newtheorem{conjecture}{\csu@cap@conjecture}
-\newtheorem{axiom}{\csu@cap@axiom}
-\newtheorem{principle}{\csu@cap@principle}
-\newtheorem{problem}{\csu@cap@problem}
-\newtheorem{example}{\csu@cap@example}
-\newtheorem*{proof}{\it{\csu@cap@proof}}
-\newtheorem{solution}{\csu@cap@solution}
+\newtheorem{theorem}{\indent\bf 定理}[section]
+\newtheorem{lemma}[theorem]{\indent\bf 引理}
+\newtheorem{proposition}[theorem]{\indent\bf 命题}
+\newtheorem{corollary}[theorem]{\indent\bf 推论}
+\newtheorem{definition}{\indent\bf 定义}[section]
+\newtheorem{example}{\indent\bf 例}[section]
+\newtheorem{remark}{\indent\bf 注}[section]
+\newtheorem*{proof}{\indent\bf 证明}
+\renewcommand{\thetheorem}{\arabic{section}-\arabic{theorem}} % 定理section编号
+\newenvironment{solution}{\begin{proof}[\indent\bf 解]}{\end{proof}}
+
+% 数学定理相关的常量
+%\newcommand*{\csu@cap@definition}{定义}
+%\newcommand*{\csu@cap@theorem}{定理}
+%\newcommand*{\csu@cap@lemma}{引理}
+%\newcommand*{\csu@cap@corollary}{推论}
+%\newcommand*{\csu@cap@assumption}{假设}
+%\newcommand*{\csu@cap@conjecture}{猜想}
+%\newcommand*{\csu@cap@axiom}{公理}
+%\newcommand*{\csu@cap@principle}{定律}
+%\newcommand*{\csu@cap@problem}{问题}
+%\newcommand*{\csu@cap@example}{例}
+%\newcommand*{\csu@cap@proof}{证明}
+%\newcommand*{\csu@cap@solution}{解}
+%
+%\newtheorem{definition}{\csu@cap@definition}
+%\newtheorem{theorem}{\csu@cap@theorem}
+%\newtheorem{lemma}{\csu@cap@lemma}
+%\newtheorem{corollary}{\csu@cap@corollary}
+%\newtheorem{assumption}{\csu@cap@assumption}
+%\newtheorem{conjecture}{\csu@cap@conjecture}
+%\newtheorem{axiom}{\csu@cap@axiom}
+%\newtheorem{principle}{\csu@cap@principle}
+%\newtheorem{problem}{\csu@cap@problem}
+%\newtheorem{example}{\csu@cap@example}
+%\newtheorem*{proof}{\it{\csu@cap@proof}}
+%\newtheorem{solution}{\csu@cap@solution}
 
 % 编号分章节。如需要连续编号，注释\makeatletter下面对应内容即可。
 \renewcommand{\theequation}{\arabic{section}-\arabic{equation}}

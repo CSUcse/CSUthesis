@@ -7,6 +7,7 @@
 
 已有珠玉在前，我们之所以还要重新造轮子，主要是参考了2020年4月2号学校下发的[《中南大学研究生学位论文撰写规范》中大研字【2020】30号]( http://oa.its.csu.edu.cn/Home/ReleaseMainText/909CD53BF50943CD97B83C352032FEA4 )，重新修改了页面布局、字体类型和大小、标题内容，以期做到与 Word 模板尽可能的相似。主要修改如下：
 \begin{itemize}
+\item 依据专家意见修订定理和证明等环境，如”定理”使用小四黑体，编号随章节变化重新编号（如定理4-1），定理内容使用小四宋体，且内容行距与正文一致；”证明”无需编号，且以黑色小方块结尾；
 \item 修订算法在每个章节重新编号问题；
 \item 增加符号说明页和附录页（如果不需要，请在.cls文件对应处注释掉即可）；
 \item  增加参考文献按国标 gbt7714-2015要求，只核对了常用的图书、中英文期刊，会议格式，其余未常使用的未进行核对（如有问题请改回gbt7714-2005）；
@@ -249,7 +250,7 @@
 
 \newpage
 
-\section{公式插入示例}
+\section{公式、定理、证明插入示例}
 
 \begin{flalign}
 \text{P1: } &\min_{\eta,R_u>0,R_d>0}\big\{ T_{\text{latency}}(\eta,R_u,R_d)\big\}  \\
@@ -279,6 +280,22 @@
 & \hspace{1.5em} ~\sum_{n=1}^Nq_{n,i}\leq 1,\sum_{m=1}^Mq_{m,i}\leq 1,\forall i, \label{RBcons2} \\
 & \hspace{1.5em} ~C_{m,BS,i}(P_{m,i},q_{m,i})\geq\varepsilon_{m,i},\forall m, \label{capcons}
 \end{flalign}
+
+  %%%%%%%%%% 示例 %%%%%%%%%%%5
+定理和证明环境说明：如”定理”使用小四黑体，编号随章节变化重新编号（如定理4-1），定理内容使用小四宋体，且内容行距与正文一致；”证明”无需编号，且以黑色小方块结尾。
+
+\begin{theorem}\label{theorem1}
+	\setlength{\baselineskip}{20pt}         % 基准行间距
+	\renewcommand{\baselinestretch}{1.0}   % 几倍行间距
+	开始定理。。。
+\end{theorem}
+
+\begin{proof*} %% 证明不编号
+	\setlength{\baselineskip}{20pt}         % 基准行间距
+	\renewcommand{\baselinestretch}{1.0}   % 几倍行间距
+	开始证明。。。
+	$\hfill\blacksquare$ %% 以黑方块结尾
+\end{proof*}
 
 \newpage
 
