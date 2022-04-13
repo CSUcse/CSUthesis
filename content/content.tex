@@ -234,16 +234,44 @@
 	scale $\sigma$, angle $\theta$ relation between $I$ and $T$ 
 	
 	\begin{algorithmic}[1] 
-		\State {fourier transform: $F=\mathcal{F}(I)$}
-		\State {high pass filter: $F_h=\mathcal{H}(F)$\\$\mathcal{H}(x,y)=(1.0-cos(\pi x)cos(\pi y))(2.0-cos(\pi x)cos(\pi y))$}
-		\State {log-polar transform: $F_{lp}=\mathcal{L}(F_h)$}
-		\State {apply kernel function: $F_\kappa=\mathcal{K}(F_{lp})$}
-		\State {phase correlation: $(\Delta x, \Delta y)=\mathcal{C}(F_\kappa, T_\kappa)$}
-		\State {resolove scale and rotation:\\
+		\STATE{fourier transform: $F=\mathcal{F}(I)$}
+		\STATE {high pass filter: $F_h=\mathcal{H}(F)$\\$\mathcal{H}(x,y)=(1.0-cos(\pi x)cos(\pi y))(2.0-cos(\pi x)cos(\pi y))$}
+		\STATE {log-polar transform: $F_{lp}=\mathcal{L}(F_h)$}
+		\STATE {apply kernel function: $F_\kappa=\mathcal{K}(F_{lp})$}
+		\STATE {phase correlation: $(\Delta x, \Delta y)=\mathcal{C}(F_\kappa, T_\kappa)$}
+		\STATE {resolove scale and rotation:\\
 			$\theta=\alpha \Delta x$, $\sigma=log(\Delta y)$\\
 			where $\alpha$ is translation factor of pixel translation on fourier domain and polar angle on origin image
 		}
 	\end{algorithmic}  
+\end{algorithm}
+
+
+  \begin{algorithm}
+	\caption{算法示例}
+	\label{alg:SPSH01}
+	\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+	\renewcommand{\algorithmicensure}{\textbf{Output:}}
+	
+	\begin{algorithmic}[1]
+		\REQUIRE 相关输入。。。。
+		
+		\ENSURE 相关输出。。。
+		
+		\STATE 算法描述  % 只占用一个行号
+		\FOR{$i \gets 1\cdots N$}
+		\STATE 算法描述
+		\FOR{\textbf{each} $j \gets 1\cdots K$}
+		\STATE 算法描述
+		\ENDFOR
+		\ENDFOR
+		\REPEAT
+		\REPEAT
+		\STATE 令$\tau\gets\tau+1$
+		\UNTIL 内循环迭代终止条件
+		\STATE 。。。
+		\UNTIL 外循环迭代终止条件
+	\end{algorithmic}
 \end{algorithm}
 
 \textbf{如算法\ref{alg:A}所示，latex算法技巧很多。按需调整，这里不再详细介绍。}

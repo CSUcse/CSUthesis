@@ -98,10 +98,10 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % % 尺寸计算
 % \RequirePackage{calc}
 % 算法编号，按需调整需要的算法包
-\RequirePackage{algorithm}
-%\usepackage{algorithmic}
-\usepackage{algorithmicx}
-\usepackage{algpseudocode}
+%\RequirePackage{algorithm}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+%\usepackage{algpseudocode}
 
 % 参考文献格式 GBT7714-2005
 % 来自https://github.com/CTeX-org/gbt7714-bibtex-style
