@@ -660,11 +660,19 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     \csu@endoldtabular\egroup
 }
 
+%% 设定三线表表线条粗细与论文要求一致
+\setlength\heavyrulewidth{1.5pt}
+\setlength\arrayrulewidth{0.75pt}
+\setlength\lightrulewidth{0.75pt}
+
 % 表格字号应比正文小，一般五号/10.5pt，但是暂时没法再cls里设置（不然会影响到封面等tabular环境）
 % 所以目前只好在主文件里局部\AtBeginEnvironment
 
 % 数学环境, 定理等设置 %
 % -------------------------------------------------------%
+
+\allowdisplaybreaks[4] %允许公式跨页面显示
+
 \renewtheoremstyle{plain}
 {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\theorem@separator]}
 {\item[\hskip\labelsep \theorem@headerfont ##1\ ##2\ ##3\theorem@separator]}
