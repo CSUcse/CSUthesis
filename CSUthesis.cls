@@ -101,6 +101,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 %\RequirePackage{algorithm}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+%\usepackage[scale=1.0]{fdsymbol}
 %\usepackage{algpseudocode}
 
 % 参考文献格式 GBT7714-2005
@@ -215,7 +216,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % - 涉密学位论文（专业）
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 定义 \makecoverpage 实现封面的重新绘制
+% 定义 \makecoverpage 封面绘制
 % -----------------------------------------------%
 \newcommand{\makecoverpage} {
     \thispagestyle{empty}
@@ -229,29 +230,37 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
         {\zihao{-2}\bfseries \TimesNewRoman \@titleen \par} % 小二号，timesnewroman
         \vspace{4cm} % 两个空行
         {
-            \zihao{3} \songti
+            \zihao{3} \bfseries \songti
             \begin{tabular}{ll}
-                \makebox[4em][s]{学科专业} & \@priormajor \\
-                \makebox[4em][s]{学科方向} & \@minormajor \\        
-\ifblindreview
-                \makebox[4em][s]{研究方向} & \@interestmajor \\
-                \makebox[4em][s]{学   号}  & \@studentid \\
+\ifAcademic
+                \makebox[6em][s]{一级学科} & \makebox[14em]{\@priormajor} \\
+                \makebox[6em][s]{二级学科} & \makebox[14em]{\@minormajor} \\  
 \else
-                \makebox[4em][s]{作者姓名} & \@author \\
-                \makebox[4em][s]{指导教师} & \@supervisor \\
+      		\makebox[6em][s]{专业学位类别} & \makebox[14em]{\@priormajor} \\
+                \makebox[6em][s]{专业领域} & \makebox[14em]{\@minormajor} \\
+\fi
+  
+\ifblindreview
+                \makebox[6em][s]{研究方向} & \makebox[14em]{\@interestmajor} \\
+                \makebox[6em][s]{学号} & \makebox[14em]{\@studentid} \\
+\else
+                \makebox[6em][s]{作者姓名} & \makebox[14em]{\@author} \\
+                \makebox[6em][s]{指导教师} & \makebox[14em]{\@supervisor} \\
 \fi
             \end{tabular}
         }
         \par
-        \vspace{4cm} 
+        \vspace{5cm} 
         % \vfill
         {
             \centering
-            {\centering \zihao{-3} \songti 中\quad 南\quad 大\quad 学 \par} 
+            %{\centering \zihao{-3} \songti 中\quad 南\quad 大\quad 学 \par} 
             {\centering \zihao{-3} \songti \@thesisdate \par}
         }
     }
 }
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 扉页 
@@ -268,7 +277,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
             中图分类号  & \underline{\makebox[3cm][c]{\@clcnumber}} & &
             学校代码    & \underline{\makebox[3cm][c]{\@schoolcode}} \\ 
             UDC         & \underline{\makebox[3cm][c]{\@udc}} & &
-            学术类别    & \underline{\makebox[3cm][c]{\@academiccategory}} \\ 
+            学位类别    & \underline{\makebox[3cm][c]{\@academiccategory}} \\ 
         \end{tabular}
     }
 
@@ -278,9 +287,9 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
         {
             \zihao{-2}
             % 注意centering的使用，只在局部环境中使用。
-            \vspace{2ex} % 空行
+            \vspace{4ex} % 空行
             { \bfseries \heiti 博士学位论文 \par} % 小二号黑体加粗
-            \vspace{5ex} % 空行
+            \vspace{4ex} % 空行
             {\zihao{2} \bfseries \heiti \@titlecn \par} % 中文标题二号黑体加粗
             { \bfseries \TimesNewRoman \@titleen \par} % 英文标题小二号 Times New Roman，加粗
         }
@@ -294,8 +303,13 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
                 % 利用\makebox[7em][s]{} 实现两端对齐，即字数不同但左右对齐。
                 % 7em表示分散对齐的最长的长度为7个字的长度，参数s表示两端分散对齐。
                 \makebox[6em][s]{作者姓名}      &  \makebox[14em]{\@author}        \\[6pt]
-                \makebox[6em][s]{学科专业}      &  \makebox[14em]{\@priormajor}    \\[6pt]
-                \makebox[6em][s]{学科方向}      &  \makebox[14em]{\@minormajor}    \\[6pt]
+\ifAcademic
+                \makebox[6em][s]{一级学科}      &  \makebox[14em]{\@priormajor}    \\[6pt]
+                \makebox[6em][s]{二级学科}      &  \makebox[14em]{\@minormajor}    \\[6pt]
+\else
+			\makebox[6em][s]{专业学位类别}      &  \makebox[14em]{\@priormajor}    \\[6pt]
+                \makebox[6em][s]{专业领域}      &  \makebox[14em]{\@minormajor}    \\[6pt]
+\fi
                 \makebox[6em][s]{研究方向}      &  \makebox[14em]{\@interestmajor} \\[6pt]
                 \makebox[6em][s]{二级培养单位}  &  \makebox[14em]{\@department}    \\[6pt]
                 \makebox[6em][s]{指导教师}      &  \makebox[14em]{\@supervisor}    \\[6pt]
@@ -332,11 +346,9 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % 已按要求排版。
 
 \newcommand{\announcement}{
-    % 按学校模板这里是华文新魏字体
-
-    \linespread{1.45} % 这部分的行间距跟正文不一样
-    {~}
-    \vspace{10pt}
+    % 按学校模板这里是华文新魏字体 
+    %{~}
+    %\vspace{10pt}
 
     {\centering \zihao{2} \bfseries \huawenxinwei 学位论文原创性声明 \par}
 
@@ -344,16 +356,15 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
     \setlength{\parindent}{2em} % 首行缩进
     {
-        \zihao{4}
+        \zihao{4} \setlength{\baselineskip}{20pt}
         本人郑重声明，所呈交的学位论文是本人在导师指导下进行的研究工作及取得的研究成果。尽我所知，除了论文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得中南大学或其他教育机构的学位或证书而使用过的材料。与我共同工作的同志对本研究所作的贡献均已在论文中作了明确的说明。
 
         申请学位论文与资料若有不实之处，本人承担一切相关责任。
 
-    		{~}
-    		\vspace{10pt}
+    	 \vspace{20pt}
 
         %\begin{flushright}
-            作者签名：\underline{\makebox[5em][c]{}} ~~
+            学位论文作者签名：\underline{\makebox[5em][c]{}} ~~
             日期：
             \underline{\makebox[3em][c]{}} 年
             \underline{\makebox[1.5em][c]{}} 月
@@ -362,27 +373,40 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
         
     }
 
-    \vspace{1.75cm}
+    \vspace{1.2cm}
 
     {\centering \zihao{2} \bfseries \huawenxinwei 学位论文版权使用授权书 \par}
 
     \vspace{21pt}
 
+    \setlength{\parindent}{2em} % 首行缩进
     {
-        \zihao{4} 
-        本学位论文作者和指导教师完全了解中南大学有关保留、使用学位论文的规定：即学校有权保留并向国家有关部门或机构送交学位论文的复印件和电子版；本人允许本学位论文被查阅和借阅；学校可以将本学位论文的全部或部分内容编入有关数据库进行检索，可以采用复印、缩印或其它手段保存和汇编本学位论文。
+        \zihao{4} \setlength{\baselineskip}{20pt}
+        本学位论文作者和指导教师完全了解中南大学有关保留、使用学位论文的规定：即学校有权保留并向国家有关部门或机构送交学位论文的复印件和电子版，允许本学位论文被查阅和借阅。本人授权中南大学可以将本学位论文的全部或部分内容编入有关数据库进行检索和公开传播，可以采用复印、缩印或其它手段保存和汇编学位论文。本人同意按《中国优秀博硕士学位论文全文数据库出版章程》规定享受相关权益。本人保证：毕业后以学位论文内容发表的论文作者单位注明中南大学；学位论文电子文档的内容和纸质学位论文的内容相一致。
 
-        保密论文待解密后适应本声明。
+	   延缓公开论文延缓到期后适用本授权书，涉密论文在解密后适用本授权书。
+	   
+	   %\vspace{20pt}
+	   本学位论文属于：(请在以下相应方框内打“√”）
 
-    		{~}
-    		\vspace{10pt}
+	   $\square$ 公开
+
+        $\square$ 延缓公开，延缓期限（\underline{\makebox[1.2em][c]{}} 年
+            \underline{\makebox[0.8em][c]{}} 月
+            \underline{\makebox[0.8em][c]{}} 日至\underline{\makebox[1.2em][c]{}} 年
+            \underline{\makebox[0.8em][c]{}} 月
+            \underline{\makebox[0.8em][c]{}} 日）
+
+
+
+    	  \vspace{20pt}
 
         \begin{table}[!ht]
             \zihao{4} 
             \begin{tabular*}{\hsize}{@{}@{\extracolsep{\fill}}lll@{}}
-            作者签名：\underline{\makebox[5em][c]{}} & &
+            学位论文作者签名：\underline{\makebox[5em][c]{}} & &
             指导教师签名：\underline{\makebox[5em][c]{}} \\
-    			\vspace{-6pt}
+    			\vspace{-8pt}
             \\
             日期：
             \underline{\makebox[3em][c]{}} 年
@@ -392,6 +416,9 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
             \underline{\makebox[3em][c]{}} 年
             \underline{\makebox[1.5em][c]{}} 月
             \underline{\makebox[1.5em][c]{}} 日 \\
+		\vspace{-8pt}
+ 		\\
+		（填写阿拉伯数字）
             \end{tabular*}
         \end{table}
     }
