@@ -443,9 +443,9 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newcommand*{\categorycn}[1]{\gdef\@categorycn{#1}} % 定义中文分类
 \newcommand*{\itemcountcn}[1]{\gdef\@itemcountcn{#1}} % 定义中文图表参考文献统计信息
 \newenvironment{abstractcn} { % 定义中文摘要环境
-	\setlength{\baselineskip}{20pt}         % 基准行间距
-	\renewcommand{\baselinestretch}{1.0}   % 几倍行间距
-	{~}
+    \setlength{\baselineskip}{20pt}         % 基准行间距
+    \renewcommand{\baselinestretch}{1.0}   % 几倍行间距
+    {~}
     \vspace{-3pt}
     \begin{center} \zihao{3} \bfseries \heiti \@titlecn \end{center}
     \vspace{30pt}
@@ -634,6 +634,14 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	font={kai,five},   % 图的字体, 宋体小四
 	position=bottom    % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
 }
+
+\renewenvironment{figure}
+  {
+   \setlength\abovecaptionskip{0pt} %% 调整标题与图片距离
+   \setlength\belowcaptionskip{0pt} %% 调整标题与下文距离
+   \@float{figure}}
+  {\end@float}
+  
 % 表格格式
 % ------------------------------------------------------%
 \renewcommand{\thetable}{\arabic{section}-\arabic{table}}
