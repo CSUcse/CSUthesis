@@ -436,12 +436,12 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \newcommand*{\categorycn}[1]{\gdef\@categorycn{#1}} % 定义中文分类
 \newcommand*{\itemcountcn}[1]{\gdef\@itemcountcn{#1}} % 定义中文图表参考文献统计信息
 \newenvironment{abstractcn} { % 定义中文摘要环境
-	\setlength{\baselineskip}{20pt}         % 基准行间距
-	\renewcommand{\baselinestretch}{1.0}   % 几倍行间距
-	{~}
+    \setlength{\baselineskip}{20pt}         % 基准行间距
+    \renewcommand{\baselinestretch}{1.0}   % 几倍行间距
+    {~}
     \vspace{-3pt}
     \begin{center} \zihao{3} \bfseries \heiti \@titlecn \end{center}
-    \vspace{23pt}
+    \vspace{30pt}
     \noindent{\zihao{4}\bfseries\heiti{摘\quad 要：}} % 摘要俩字为四号黑体
     \zihao{4}\songti \noindent % 内容为四号宋体
 }
@@ -470,7 +470,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	{~}
     \vspace{-3pt}
     \begin{center}\TimesNewRoman \zihao{3} \bfseries \@titleen \end{center}
-    \vspace{23pt}
+    \vspace{30pt}
     \noindent {\TimesNewRoman \zihao{4} \bfseries Abstract:} % 摘要俩字为四号黑体
     \TimesNewRoman \zihao{4} \noindent % 内容为四号Times New Roman
 }
