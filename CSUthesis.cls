@@ -638,6 +638,14 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	font={kai,five},   % 图的字体, 宋体小四
 	position=bottom    % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
 }
+
+\renewenvironment{figure}
+  {
+   \setlength\abovecaptionskip{0pt} %% 调整标题与图片距离
+   \setlength\belowcaptionskip{0pt} %% 调整标题与下文距离
+   \@float{figure}}
+  {\end@float}
+  
 % 表格格式
 % ------------------------------------------------------%
 \renewcommand{\thetable}{\arabic{section}-\arabic{table}}
@@ -648,6 +656,14 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	font={kai,five},   % 表的字体, 宋体小四
 	position=top
 }
+
+\renewenvironment{table}
+  {%\vspace{0.3cm}  % 调整表格与上文距离
+   \setlength\abovecaptionskip{0pt} %% 调整标题与表格距离
+   \setlength\belowcaptionskip{10pt} %% 调整标题与下文距离
+   \@float{table}}
+  {\end@float}
+  
 % 算法
 % ------------------------------------------------------%
 \floatname{algorithm}{算法}
