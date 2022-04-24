@@ -502,13 +502,13 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \titleformat{\section}{\zihao{3} \bfseries \heiti}{第{\thesection}章}{1em}{\centering} % 正文章名居中
 \titlespacing*{\section} {0pt}{18pt}{12pt}
 \titleformat{\subsection}{\zihao{4} \songti}{\thesubsection}{1em}{}
-\titlespacing*{\subsection} {0pt}{12pt}{3pt}
+\titlespacing*{\subsection} {0pt}{10pt}{8pt}
 \titleformat{\subsubsection}{\zihao{-4} \songti}{\thesubsubsection}{1em}{}
-\titlespacing*{\subsubsection} {0pt}{12pt}{3pt}
+\titlespacing*{\subsubsection} {0pt}{10pt}{8pt}
 \titleformat{\paragraph}{\zihao{-4} \songti}{\theparagraph}{1em}{}
-\titlespacing*{\paragraph} {0pt}{12pt}{3pt}
+\titlespacing*{\paragraph} {0pt}{10pt}{8pt}
 \titleformat{\subparagraph}{\zihao{-4} \songti}{(\arabic{subparagraph})}{1em}{}
-\titlespacing*{\subparagraph} {2em}{12pt}{3pt}
+\titlespacing*{\subparagraph} {2em}{10pt}{8pt}
 % 定义在目录中的格式
 % \titlecontents{标题名}
 %               [左间距]
@@ -525,13 +525,16 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % \titlecontents{paragraph}[11em]{\zihao{5}}{\contentslabel{4em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
 
 
+\titlecontents{section}[0em]{\zihao{-4}\heiti\vspace{3pt}}{\contentspush{第\thecontentslabel\ 章\quad}}{}{\titlerule*{$\cdot$}\contentspage}[\vspace{3pt}]
+\titlecontents{subsection}[1em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage}
+\titlecontents{subsubsection}[2em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage}
 
-\titlecontents{section}
-               [0pt]
-               {\zihao{-4} \heiti} % 章名设置为黑小四
-               {\contentspush{第\thecontentslabel\ 章\quad}} % 第x章
-               {}
-               {\titlerule*[0.5em]{$\cdot$}\contentspage}
+%\titlecontents{section}
+%               [0pt]
+%               {\zihao{-4} \heiti} % 章名设置为黑小四
+%               {\contentspush{第\thecontentslabel\ 章\quad}} % 第x章
+%               {}
+%               {\titlerule*[0.5em]{$\cdot$}\contentspage}
 % \titlecontents{section}
 %               [0.75em] % 按样例目录左侧是和前置部分文字左侧对齐的
 %               {\zihao{-4} \songti}
@@ -541,19 +544,19 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 %               {\hspace*{-1em}}
 %               {\titlerule*[0.5pc]{.} ~\contentspage}
 
-\titlecontents{subsection}
-    [3.2em]
-    {\zihao{-4} \songti} % note that 3.8 = 1.5 + 2.3
-    {\contentslabel{2.2em}}
-    {\hspace*{-3.5em}}
-    {\titlerule*[0.5em]{$\cdot$}\contentspage}
+%\titlecontents{subsection}
+%    [3.2em]
+%    {\zihao{-4} \songti} % note that 3.8 = 1.5 + 2.3
+%    {\contentslabel{2.2em}}
+%    {\hspace*{-3.5em}}
+%    {\titlerule*[0.5em]{$\cdot$}\contentspage}
 
-\titlecontents{subsubsection}
-    [6em]
-    {\zihao{-4} \songti} % note that 3.8 = 1.5 + 2.3
-    {\contentslabel{3.0em}}
-    {\hspace*{-5em}}
-    {\titlerule*[0.5em]{$\cdot$}\contentspage}
+%\titlecontents{subsubsection}
+%    [6em]
+%    {\zihao{-4} \songti} % note that 3.8 = 1.5 + 2.3
+%    {\contentslabel{3.0em}}
+%    {\hspace*{-5em}}
+%    {\titlerule*[0.5em]{$\cdot$}\contentspage}
 
 
 % 6. 符号说明（必要时）%
