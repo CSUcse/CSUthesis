@@ -232,7 +232,11 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
         \centering
         \linespread{1.5}
         \vspace*{1.5cm}
+\ifDoctor
+        {\zihao{-2} \bfseries \heiti 博士学位论文 \par} % 小二号黑体
+\else
         {\zihao{-2} \bfseries \heiti 硕士学位论文 \par} % 小二号黑体
+\fi
         \vspace{2cm} % 两个空行
         {\zihao{2} \bfseries \heiti \@titlecn \par} % 二号黑体
         {\zihao{-2}\bfseries \TimesNewRoman \@titleen \par} % 小二号，timesnewroman
@@ -294,7 +298,11 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
             \zihao{-2}
             % 注意centering的使用，只在局部环境中使用。
             \vspace{4ex} % 空行
+\ifDoctor
+            { \bfseries \heiti 博士学位论文 \par} % 小二号黑体加粗
+\else
             { \bfseries \heiti 硕士学位论文 \par} % 小二号黑体加粗
+\fi
             \vspace{4ex} % 空行
             {\zihao{2} \bfseries \heiti \@titlecn \par} % 中文标题二号黑体加粗
             { \bfseries \TimesNewRoman \@titleen \par} % 英文标题小二号 Times New Roman，加粗
