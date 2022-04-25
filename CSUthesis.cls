@@ -528,9 +528,9 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 %               [下间距]
 
 
-\titlecontents{section}[0em]{\zihao{-4}\heiti\vspace{3pt}}{\contentspush{第\thecontentslabel\ 章\quad}}{}{\titlerule*[0.5em]{$\cdot$}\contentspage}[\vspace{3pt}]%
-\titlecontents{subsection}[1em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.5em]{$\cdot$}\contentspage}
-\titlecontents{subsubsection}[2em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.5em]{$\cdot$}\contentspage}
+\titlecontents{section}[0em]{\zihao{-4}\heiti\vspace{3pt}}{\contentspush{第\thecontentslabel\ 章\quad}}{}{\titlerule*[0.5em]{$.$}\contentspage}[\vspace{3pt}]%
+\titlecontents{subsection}[1em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.5em]{$.$}\contentspage}
+\titlecontents{subsubsection}[2em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.5em]{$.$}\contentspage}
 
 
 
