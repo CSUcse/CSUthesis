@@ -451,7 +451,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     \vspace{-3pt}
     \begin{center} \zihao{3} \bfseries \heiti \@titlecn \end{center}
     \vspace{30pt}
-    \noindent{\zihao{4}\bfseries\heiti{摘\quad 要：}} % 摘要俩字为四号黑体
+    \noindent{\zihao{4}\bfseries\heiti{摘要：}} % 摘要俩字为四号黑体
     \zihao{4}\songti \noindent % 内容为四号宋体
 }
 % 显示中文关键词和分类号
@@ -528,9 +528,9 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 %               [下间距]
 
 
-\titlecontents{section}[0em]{\zihao{-4}\heiti\vspace{3pt}}{\contentspush{第\thecontentslabel\ 章\quad}}{}{\titlerule*{$\cdot$}\contentspage}[\vspace{3pt}]%
-\titlecontents{subsection}[1em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage}
-\titlecontents{subsubsection}[2em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*{$\cdot$}\contentspage}
+\titlecontents{section}[0em]{\zihao{-4}\heiti\vspace{3pt}}{\contentspush{第\thecontentslabel\ 章\quad}}{}{\titlerule*[0.5em]{$\cdot$}\contentspage}[\vspace{3pt}]%
+\titlecontents{subsection}[1em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.5em]{$\cdot$}\contentspage}
+\titlecontents{subsubsection}[2em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.5em]{$\cdot$}\contentspage}
 
 
 
@@ -741,6 +741,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 %取消插图索引、表格索引的左缩进
 \renewcommand*\l@figure{\@dottedtocline{1}{0em}{2.3em}}% Default: 1.5em/2.3em
 \let\l@table\l@figure
+\renewcommand\@dotsep{3} % 修改插图索引及表格索引中的点密度
 \makeatother
 
 \makeatletter
