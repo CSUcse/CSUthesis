@@ -161,7 +161,11 @@
 \renewcommand{\subsubsectionmark}[1]{\markright{\leftmark}}
 
 \fancyhf[RH]{\songti \zihao{5} \leftmark} % 设置所有（奇数和偶数）右侧页眉net
-\fancyhf[LH]{\songti \zihao{5} 中南大学博士学位论文} % 设置所有（奇数和偶数）左侧页眉
+\ifDoctor
+	\fancyhf[LH]{\songti \zihao{5} 中南大学博士学位论文} % 设置所有（奇数和偶数）左侧页眉
+\else
+	\fancyhf[LH]{\songti \zihao{5} 中南大学硕士学位论文} % 设置所有（奇数和偶数）左侧页眉
+\fi
 % 正文内容 
 % --------------------------------------------%
 \setcounter{page}{1} % 重置页码编号
