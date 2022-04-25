@@ -333,6 +333,16 @@
 
 其中，公式\ref{Eq.(3-4a)}表示。
 
+\begin{equation}    
+	H_{j}= \mathrm{Concat}(\mathrm{GAP}({F}_{j}),\mathrm{GMP}({F}_{j})),
+\end{equation}
+\begin{equation}    
+	\tilde{H}_{j-1,j}= \mathrm{Concat}(H_{j-1},H_{j}),j=5,
+\end{equation}
+\begin{equation}    
+	p_c^{(i)}=\mathrm{Softmax}(\boldsymbol{P}_\theta(\tilde{H}_{j-1,j})),
+\end{equation}
+
   %%%%%%%%%% 示例 %%%%%%%%%%%5
 定理和证明环境说明：如”定理”使用小四黑体，编号随章节变化重新编号（如定理4-1），定理内容使用小四宋体，且内容行距与正文一致；”证明”无需编号，且以黑色小方块结尾。
 

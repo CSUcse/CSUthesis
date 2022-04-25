@@ -38,6 +38,14 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 % ------------------------------------%
 % 支持中文的 ctex 宏包
 \RequirePackage{ctex}
+% 数学宏包
+\RequirePackage{amsmath}
+\RequirePackage{ntheorem}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{bm}
+\allowdisplaybreaks[4] %允许公式跨页面显示
+
 % 页面布局
 \RequirePackage{geometry}
 % 自定义关键词
@@ -99,13 +107,6 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \usepackage{array}
 \usepackage{supertabular}
 
-% 数学宏包
-\RequirePackage{amsmath}
-\RequirePackage{ntheorem}
-\RequirePackage{amsfonts}
-\RequirePackage{amssymb}
-\RequirePackage{bm}
-\allowdisplaybreaks[4] %允许公式跨页面显示
 
 \setlength\heavyrulewidth{1.5pt}
 \setlength\arrayrulewidth{0.75pt}
