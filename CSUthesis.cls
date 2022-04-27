@@ -284,11 +284,11 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     \setlength\parindent{0em}
     {
         \zihao{4} \songti
-        \begin{tabular}{l@{}c p{3cm} l@{}c}     % @{}去除边框距离，更符合学校模板的下划线紧贴描述文字
-            中图分类号  & \underline{\makebox[3cm][c]{\@clcnumber}} & &
-            学校代码    & \underline{\makebox[3cm][c]{\@schoolcode}} \\ 
-            UDC         & \underline{\makebox[3cm][c]{\@udc}} & &
-            学位类别    & \underline{\makebox[3cm][c]{\@academiccategory}} \\ 
+        \begin{tabular}{l@{}c p{3.8cm} l@{}c}     % @{}去除边框距离，更符合学校模板的下划线紧贴描述文字
+            中图分类号  & \underline{\makebox[2cm][c]{\@clcnumber}} & &
+            学校代码    & \underline{\makebox[3.3cm][c]{\@schoolcode}} \\ 
+            UDC         & \underline{\makebox[2cm][c]{\@udc}} & &
+            学位类别    & \underline{\makebox[3.3cm][c]{\@academiccategory}} \\ 
         \end{tabular}
     }
 
