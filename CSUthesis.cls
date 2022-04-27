@@ -284,11 +284,11 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     \setlength\parindent{0em}
     {
         \zihao{4} \songti
-        \begin{tabular}{l@{}c p{3cm} l@{}c}     % @{}去除边框距离，更符合学校模板的下划线紧贴描述文字
-            中图分类号  & \underline{\makebox[3cm][c]{\@clcnumber}} & &
-            学校代码    & \underline{\makebox[3cm][c]{\@schoolcode}} \\ 
-            UDC         & \underline{\makebox[3cm][c]{\@udc}} & &
-            学位类别    & \underline{\makebox[3cm][c]{\@academiccategory}} \\ 
+        \begin{tabular}{l@{}c p{3.8cm} l@{}c}     % @{}去除边框距离，更符合学校模板的下划线紧贴描述文字
+            中图分类号  & \underline{\makebox[2cm][c]{\@clcnumber}} & &
+            学校代码    & \underline{\makebox[3.3cm][c]{\@schoolcode}} \\ 
+            UDC         & \underline{\makebox[2cm][c]{\@udc}} & &
+            学位类别    & \underline{\makebox[3.3cm][c]{\@academiccategory}} \\ 
         \end{tabular}
     }
 
@@ -457,7 +457,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     {~}
     \vspace{-3pt}
     \begin{center} \zihao{3} \bfseries \heiti \@titlecn \end{center}
-    \vspace{30pt}
+    \vspace{20pt}
     \noindent{\zihao{4}\bfseries\heiti{摘要：}} % 摘要俩字为四号黑体
     \zihao{4}\songti \noindent % 内容为四号宋体
 }
@@ -486,7 +486,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	{~}
     \vspace{-3pt}
     \begin{center}\TimesNewRoman \zihao{3} \bfseries \@titleen \end{center}
-    \vspace{30pt}
+    \vspace{20pt}
     \noindent {\TimesNewRoman \zihao{4} \bfseries Abstract:} % 摘要俩字为四号黑体
     \TimesNewRoman \zihao{4} \noindent % 内容为四号Times New Roman
 }
@@ -517,6 +517,10 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 %               [after-code]%定义标题后的内容
 \titleformat{\section}{\zihao{3} \bfseries \heiti}{第{\thesection}章}{1em}{\centering} % 正文章名居中
 \titlespacing*{\section} {0pt}{18pt}{12pt}
+\preto\section{
+	{~} % 
+	\vspace{-31pt}%
+}
 \titleformat{\subsection}{\zihao{4} \songti}{\thesubsection}{1em}{}
 \titlespacing*{\subsection} {0pt}{10pt}{8pt}
 \titleformat{\subsubsection}{\zihao{-4} \songti}{\thesubsubsection}{1em}{}
@@ -643,13 +647,6 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	font={kai,five},   % 图的字体, 宋体小四
 	position=bottom    % position=bottom, 不代表标题放在下面, 标题仍放在你放\caption的位置.
 }
-
-\renewenvironment{figure}
-  {
-   \setlength\abovecaptionskip{0pt} %% 调整标题与图片距离
-   \setlength\belowcaptionskip{0pt} %% 调整标题与下文距离
-   \@float{figure}}
-  {\end@float}
   
 % 表格格式
 % ------------------------------------------------------%
