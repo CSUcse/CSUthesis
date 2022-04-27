@@ -55,6 +55,9 @@
 \mbox{}
 \newpage
 
+\setlength{\headheight}{9.6mm}
+\setlength{\footskip}{7.9mm}
+\setlength{\textheight}{681.5pt} % 调整版面高度
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 声明页
 % -----------------------------------------------%
@@ -66,8 +69,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 设置页眉和页脚 %
-\setlength{\headheight}{9.6mm}
-\setlength{\footskip}{7.9mm}
 \pagestyle{fancy}
 \fancyhf[CF]{\TimesNewRoman \zihao{-5} \thepage} % 所有（奇数和偶数）中间页脚，TimesNewRoman小五号
 
@@ -219,11 +220,11 @@
 % cls文件中已经引入package，这里不需要调用 \bibliographystyle 了。
 % \bibliographystyle{gbt7714-2005} 
 {~}
-\vspace{-16pt}
-
+\vspace{18pt}
 \phantomsection                                      %% 解决目录中超链接地址错误问题
 \addcontentsline{toc}{section}{参考文献} % 由于参考文献不是section，这句把参考文献加入目录
-\zihao{-4} \setmainfont{Times New Roman} 
+\zihao{-4} \setmainfont{Times New Roman}
+\setlength{\baselineskip}{20pt}         % 基准行间距 
 \bibliographystyle{gbt7714-2015-little} 
 \bibliography{thesis-references}
 
