@@ -519,8 +519,9 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \titlespacing*{\section} {0pt}{18pt}{12pt}
 \preto\section{
 	{~} % 
-	\vspace{-31pt}%
+	\vspace{-30pt}%
 }
+\preto\subsection{\ifnum\value{subsection}=0\addtocontents{toc}{\addvspace{6pt}}\fi}
 \titleformat{\subsection}{\zihao{4} \songti}{\thesubsection}{1em}{}
 \titlespacing*{\subsection} {0pt}{10pt}{8pt}
 \titleformat{\subsubsection}{\zihao{-4} \songti}{\thesubsubsection}{1em}{}
@@ -539,7 +540,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 %               [下间距]
 
 
-\titlecontents{section}[0em]{\zihao{-4}\heiti\vspace{3pt}}{\contentspush{第\thecontentslabel\ 章\quad}}{}{\titlerule*[0.5em]{$.$}\contentspage}[\vspace{3pt}]%
+\titlecontents{section}[0em]{\zihao{-4}\heiti\vspace{6pt}}{\contentspush{第\thecontentslabel\ 章\quad}}{}{\titlerule*[0.5em]{$.$}\contentspage}
 \titlecontents{subsection}[1em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.5em]{$.$}\contentspage}
 \titlecontents{subsubsection}[2em]{\zihao{-4} \songti}{\thecontentslabel\hspace{1em}}{}{\titlerule*[0.5em]{$.$}\contentspage}
 
