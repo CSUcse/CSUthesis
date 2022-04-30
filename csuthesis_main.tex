@@ -39,9 +39,9 @@
 % -----------------------------------------------%
 \makecoverpage
 
-\newpage
+\clearpage
 \mbox{}
-\newpage
+\clearpage
 
 \ifblindreview	% 盲审不需要扉页和声明页
 \else
@@ -51,9 +51,9 @@
 
 \maketitlepage
 
-\newpage
+\clearpage
 \mbox{}
-\newpage
+\clearpage
 
 \setlength{\headheight}{9.6mm}
 \setlength{\footskip}{7.9mm}
@@ -62,9 +62,9 @@
 % 声明页
 % -----------------------------------------------%
 \announcement
-\newpage
+\clearpage
 \mbox{}
-\newpage
+\clearpage
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -81,7 +81,7 @@
 \phantomsection                %% 解决目录中超链接地址错误问题
 \addcontentsline{toc}{section}{摘要} %%增加摘要至目录且与第一章对齐
 \include{content/abstractcn}
-\newpage
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 英文摘要
@@ -89,7 +89,7 @@
 \phantomsection                %% 解决目录中超链接地址错误问题
 \addcontentsline{toc}{section}{ABSTRACT}
 \include{content/abstracten}
-\newpage
+\clearpage
 
 % 目录
 % -------------------------------------------%
@@ -102,7 +102,7 @@
 	\vspace{-16pt}
 	\tableofcontents
 }
-\newpage
+\clearpage
 
 % 插图索引
 % -------------------------------------------%
@@ -122,7 +122,7 @@
 	\listoffigures
 }
 
-\newpage
+\clearpage
 
 % 表格索引
 % -------------------------------------------%
@@ -142,7 +142,7 @@
 	\listoftables
 }
 
-\newpage
+\clearpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -230,7 +230,7 @@
 \bibliographystyle{gbt7714-2015-little} 
 \bibliography{thesis-references}
 
-\newpage
+\clearpage
 % 附录
 
 \titleformat{\section}{\centering \zihao{3} \bfseries \heiti}{\thesection}{1em}{}
@@ -242,7 +242,7 @@
 
 \include{content/appendix}
 
-\newpage
+\clearpage
 % 研究成果和致谢
 
 \titleformat{\section}{\centering \zihao{3} \bfseries \heiti}{\thesection}{1em}{}
