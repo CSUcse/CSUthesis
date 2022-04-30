@@ -74,6 +74,8 @@
 \pagestyle{fancy}
 \fancyhf[CF]{\TimesNewRoman \zihao{-5} \thepage} % 所有（奇数和偶数）中间页脚，TimesNewRoman小五号
 
+\addtocontents{toc}{\vspace{-8pt}}
+
 % 中文摘要
 % -----------------------------------------------%
 \pagenumbering{Roman} % 重摘要至目录部分页码为大写罗马字体
@@ -95,11 +97,9 @@
 % -------------------------------------------%
 {
 	\renewcommand*{\baselinestretch}{1.3841}   % 行间距20pt
-	\renewcommand{\contentsname}{\hfill \heiti \bfseries \zihao{3} 目\quad 录\hfill ~\\}
+	\renewcommand{\contentsname}{\vspace{10pt} \hfill \heiti \bfseries \zihao{3} 目\quad 录\hfill ~\\}
 	\phantomsection                %% 解决目录中超链接地址错误问题
 	\addcontentsline{toc}{section}{目录} % 在目录中添加目录页码.
-	{~}
-	\vspace{-16pt}
 	\tableofcontents
 }
 \newpage
