@@ -524,8 +524,10 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \preto\subsection{\ifnum\value{subsection}=0\addtocontents{toc}{\addvspace{6pt}}\fi}
 \titleformat{\subsection}{\zihao{4} \songti}{\thesubsection}{1em}{}
 \titlespacing*{\subsection} {0pt}{10pt}{8pt}
+\preto\subsection{\vspace{5pt}}
 \titleformat{\subsubsection}{\zihao{-4} \songti}{\thesubsubsection}{1em}{}
 \titlespacing*{\subsubsection} {0pt}{10pt}{8pt}
+\preto\subsubsection{\vspace{5pt}}
 \titleformat{\paragraph}{\zihao{-4} \songti}{\theparagraph}{1em}{}
 \titlespacing*{\paragraph} {0pt}{10pt}{8pt}
 \titleformat{\subparagraph}{\zihao{-4} \songti}{(\arabic{subparagraph})}{1em}{}
