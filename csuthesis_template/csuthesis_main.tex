@@ -29,7 +29,7 @@
 \renewcommand{\headrulewidth}{0pt}
 % 中文摘要之前无需页码
 
-\include{content/info}
+\include{content/information}
 
 
 
@@ -184,6 +184,10 @@
 
 % 正文
 {
+    % 模板在cls文件中定义的页边距未考虑geometry的布局模型
+    % 导致在页眉与正文第一行之间的距离不为零(25pt)
+    % 此处为临时补救措施，以实现视觉统一(By WolfBolin)
+	\setlength{\headsep}{10pt}
 	% 表格字号应比正文小，一般五号/10.5pt，但是暂时没法再cls里设置（不然会影响到封面等tabular环境）
 	% 所以目前只好在主文件里局部\AtBeginEnvironment
 	\AtBeginEnvironment{tabular}{\zihao{5}}
