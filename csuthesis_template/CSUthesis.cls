@@ -145,18 +145,21 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	\abovedisplayshortskip \z@ \@plus3\p@
     \belowdisplayshortskip 6.5\p@ \@plus3.5\p@ \@minus3\p@
 }
-% 协议页的标题按模板是华文新魏
-\setCJKfamilyfont{hwxw}{STXinwei}[AutoFakeBold]
-\newcommand{\huawenxinwei}{\CJKfamily{hwxw}}
+
 % 重定义ctex定义好的宋体和黑体，以支持伪加粗AutoFakeBold
 % 即支持类似word里的给黑体、宋体等中文字体加粗的操作，用\bfseries
+% 需要设置主字体，避免正文使用默认字体（Linux可能为FandolSong-Regular）
+\setCJKmainfont[AutoFakeBold]{SimSun}
+% 设定多种字体定义
 \let\heiti\relax
 \newCJKfontfamily[hei]\heiti{SimHei}[AutoFakeBold]
 \let\songti\relax
 \newCJKfontfamily[song]\songti{SimSun}[AutoFakeBold]
 \let\TimesNewRoman\relax
 \newCJKfontfamily[TimesNewRoman]\TimesNewRoman{Times New Roman}[AutoFakeBold]
-
+% 协议页的标题按模板是华文新魏
+\setCJKfamilyfont{hwxw}{STXinwei}[AutoFakeBold]
+\newcommand{\huawenxinwei}{\CJKfamily{hwxw}}
 
 % 每行缩进两个汉字
 \setlength{\parindent}{2em}
@@ -628,11 +631,17 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \renewcommand{\thefigure}{\arabic{section}-\arabic{figure}}
 % \renewcommand{\thefigure} {\thesection-\arabic{figure}}
 
-\renewenvironment{figure}
+% 图片按照单独的段落进行留白设计，需要在正文排版搭配规范使用
+% 此处满足图片段前一行空行，段后一行空行，图片与标题间没有空白
+\renewenvironment{figure}[1][]
   {
-   \setlength\abovecaptionskip{4pt} %% 调整标题与图片距离
-   \setlength\belowcaptionskip{0pt} %% 调整标题与下文距离
-   \@float{figure}}
+  \setlength{\parskip}{10pt}% 调整浮动体上下的垂直间距
+  \setlength{\intextsep}{20pt}% 调整浮动体和正文之间的垂直间距
+  \setlength{\abovecaptionskip}{0pt}% 删除图片标题与下文的垂直间距
+  \setlength{\belowcaptionskip}{0pt}% 删除图片标题与上文的垂直间距
+  \setlength{\floatsep}{20pt}% 删除图片和正文之间的垂直间距
+  \@float{figure}[#1]% 引入图片，不可与setlength交换顺序
+  }
   {\end@float}
 
 %\captionsetup[subfigure]{labelfont=bf,labelsep=period,labelformat=mysublabelfmt}
@@ -662,12 +671,32 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	position=top
 }
 
-\renewenvironment{table}
-  {%\vspace{0.3cm}  % 调整表格与上文距离
-   \setlength\abovecaptionskip{0pt} %% 调整标题与表格距离
-   \setlength\belowcaptionskip{10pt} %% 调整标题与下文距离
-   \@float{table}}
+% 表格按照单独的段落进行留白设计，需要在正文排版搭配规范使用
+% 此处满足表格段前一行空行，段后没有空行，表格与标题间没有空白
+% 模板对于表格后是否应该有空行没有明确要求（示例有正文段前空行）
+% 如果要在表格后删除空行，可将parskip改为20
+\renewenvironment{table}[1][]
+  {
+   \setlength{\parskip}{10pt}% 调整浮动体上下的垂直间距
+   \setlength{\intextsep}{20pt}% 调整浮动体和正文之间的垂直间距
+   \setlength{\abovecaptionskip}{0pt}% 删除表格标题与下文的垂直间距
+   \setlength{\belowcaptionskip}{0pt}% 调整表格标题与上文的垂直间距
+   \setlength{\floatsep}{20pt}% 删除表格和正文之间的垂直间距
+   \@float{table}[#1]% 引入表格，不可与setlength交换顺序
+   \centering% 将表格居中对齐
+  }
   {\end@float}
+
+% 修改tabular 环境, 设置表格中的行间距为正文行间距.
+\let\csu@oldtabular\tabular
+\let\csu@endoldtabular\endtabular
+\renewenvironment{tabular} {
+    \bgroup
+	\renewcommand{\arraystretch}{1.38}
+    \csu@oldtabular
+} {
+    \csu@endoldtabular\egroup
+}
 
 % 算法
 % ------------------------------------------------------%
@@ -692,19 +721,6 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	rightmargin=0em, % 环境的右边界和列表之间的水平距离
 	labelsep=0.5em, % 包含标签的盒子与列表项的第一行文本之间的间隔
 	labelwidth=2em % 包含标签的盒子的正常宽度；若实际宽度更宽，则使用实际宽度。
-}
-
-% 表格 %
-% ------------------------------------------------------%
-% 修改tabular 环境, 设置表格中的行间距为正文行间距.
-\let\csu@oldtabular\tabular
-\let\csu@endoldtabular\endtabular
-\renewenvironment{tabular} {
-    \bgroup
-	\renewcommand{\arraystretch}{1.38}
-    \csu@oldtabular
-} {
-    \csu@endoldtabular\egroup
 }
 
 % 表格字号应比正文小，一般五号/10.5pt，但是暂时没法再cls里设置（不然会影响到封面等tabular环境）
