@@ -48,19 +48,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 扉页 
 % -----------------------------------------------%
-
 \maketitlepage
-
 \clearpage
 \mbox{}
 \clearpage
 
-\setlength{\headheight}{9.6mm}
-\setlength{\footskip}{7.9mm}
-\setlength{\textheight}{681.5pt} % 调整版面高度
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 声明页
 % -----------------------------------------------%
+\setlength{\headheight}{9.6mm}
+\setlength{\footskip}{7.9mm}
+\setlength{\textheight}{681.5pt}
 \announcement
 \clearpage
 \mbox{}
@@ -68,11 +66,14 @@
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% 设置页眉和页脚 %
+% 全局设置页眉、页脚和页面高度 %
 \setlength{\headheight}{9.6mm}
 \setlength{\footskip}{7.9mm}
+\setlength{\textheight}{681.5pt}
+% 套用页面格式模板
 \pagestyle{fancy}
-\fancyhf[CF]{\TimesNewRoman \zihao{-5} \thepage} % 所有（奇数和偶数）中间页脚，TimesNewRoman小五号
+% 所有（奇数和偶数）中间页脚，TimesNewRoman小五号
+\fancyhf[CF]{\TimesNewRoman \zihao{-5} \thepage} 
 
 \addtocontents{toc}{\vspace{-8pt}}
 
