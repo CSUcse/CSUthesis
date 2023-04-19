@@ -1,0 +1,438 @@
+%!TEX root = ../csuthesis_main.tex
+% 论文正文是主体，主体部分应从另页右页开始，每一章应另起页。一般由序号标题、文字叙述、图、表格和公式等五个部分构成。
+\section{绪论}
+\subsection{研究背景与意义}
+
+目的是创建一个符合中南大学研究生学位论文（博士）撰写规范的LaTeX模板，解决学位论文撰写时格式调整的痛点。
+
+已有珠玉在前，我们之所以还要重新造轮子，主要依据2022年4月18号学校下发的[《中南大学研究生学位论文撰写规范》中大研字【2022】8号] (http://oa.its.csu.edu.cn/Home/ReleaseMainText/9CFE8926B13143009D5EB424333AAD6C)，重新修改了页面布局、字体类型和大小、标题内容，以期做到与 Word 模板尽可能的相似。\textbf{学校要求}：2022年起，申请博士、硕士学位的学位论文必须按新文件执行。主要修改如下：
+\begin{itemize}
+\item 按要求修订段落与各级标题间距；
+\item 按要求修订中英文段落间距，章节间距，附录标题段落间距，研究成果及致谢标题间距，参考文献间距等；
+\item 增加博士和硕士论文模板选项，只需要info.tex选择即可，方便使用；
+\item 按新版撰写规范修改主要格式如下：修订目录章节标题间距；修订中英文段落间距；修订图片与表格标题的段落间距；
+\item 按要求更新“学位论文版权使用授权书”；
+\item 依据2022最新撰写规范修订封面和扉页-“封面”及“扉页”关于学科专业的表头更新为：一级学科/专业学位类别，二级学科/专业领域；
+\item 依据专家意见修订定理和证明等环境，如”定理”使用小四黑体，编号随章节变化重新编号（如定理4-1），定理内容使用小四宋体，且内容行距与正文一致；”证明”无需编号，且以黑色小方块结尾；
+\item 修订算法在每个章节重新编号问题；
+\item 增加符号说明页和附录页（如果不需要，请在.cls文件对应处注释掉即可）；
+\item  增加参考文献按国标 gbt7714-2015要求，只核对了常用的图书、中英文期刊，会议格式，其余未常使用的未进行核对（如有问题请改回gbt7714-2005）；
+\item  修订多个子图Caption居中问题；
+\item 依据专家意见调整成果与致谢部分间距，并增加目录中的点密度；
+\item 按照图书馆最新要求（2020年12月份），去除目录中红色边框；
+\item 增加页眉信息：中南大学博士论文与右侧的章节名保持一致，以及无需号章节名保持一致;
+\item 增加中英文摘要至目录，并保持与章节名昨对其;
+\item 参考文献完全依照国标 gbt7714-2005，修正了部分 Bug，提供了新的引用命令；
+\item 按照最新版本要求，在声明扉页前后各增加一页空白页，保证装订单独成页；
+\item 章节标题居中，并改成‘第1章’样式；
+\item 目录中，将原章节标题换成‘第几章’样式，字体按要求加粗；
+\item 中文摘要到目录结束用罗马数字编写页码，小五号Times New Roman,居中；
+\item 增加插图索引和表格索引；
+\item 所有的章节题目和中英文摘要均按要求修改字体和间距；
+\end{itemize}
+
+\subsection{主要研究工作}
+\textbf{博士和硕士模板选择说明：}
+\begin{itemize}
+	\item 当前模板默认是博士，学术型。
+	\item 如选择硕士模板，只需要将对应的content/info.tex文件中，选择$\setminus Doctorfalse$ \% 硕士学位论文，注释掉对应的博士模板就行。
+	\item 学术型和专业型，盲审和正常版本，公开和涉密版本，均是同样操作；
+	\item 其它模板，可以根据自己需要修改CSUthesis.cls文件。
+\end{itemize}
+
+(1) 提供图片插入示例。
+
+(2) 提供表格插入示例。
+
+(3) 提供公式插入示例。
+
+(4) 提供参考文献插入示例。
+
+\subsection{论文组织结构}
+
+全文内容共六章，具体内容组织如下：
+
+第一章为绪论。
+
+第二章为图片插入示例。
+
+第三章为表格插入示例。
+
+第四章为公式插入示例。
+
+第五章为参考文献插入示例。
+
+第六章总结与展望，总结了本文的主要工作，展望了下一阶段的研究方向。
+
+\clearpage
+
+\section{图像布局}
+
+
+\subsection{单图布局}
+
+
+
+\textbf{单图布局如图\ref{F.csu_single}所示。}
+
+\begin{figure}[hbt]
+\centering
+\includegraphics[width=0.5\textwidth]{csu.png}
+\caption{单图布局示例}
+\label{F.csu_single}
+\end{figure}
+
+\subsection{横排布局}
+
+\textbf{横排布局如图\ref{F.csu_row}所示。}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t]{0.24\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+         \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.24\linewidth}
+    \captionsetup{justification=centering} %子图caption居中
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.24\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.24\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \caption{横排布局示例}
+    \label{F.csu_row}
+\end{figure}
+
+
+
+\subsection{竖排布局}
+\textbf{竖排布局如图\ref{F.csu_col}所示。}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t]{0.15\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}\\
+    \begin{subfigure}[t]{0.15\linewidth}
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \caption{竖排布局示例}
+    \label{F.csu_col}
+\end{figure}
+
+
+
+\subsubsection{竖排多图横排布局}
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t]{0.13\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png} \vspace{-1ex} \vfill
+        \includegraphics[width=1\linewidth]{csu.png}
+         \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.13\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=1\linewidth]{csu.png} \vspace{-1ex} \vfill
+        \includegraphics[width=1\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \caption{竖排多图横排布局}
+    \label{F.csu_col_row}
+\end{figure}
+
+\textbf{竖排多图横排布局如图\ref{F.csu_col_row}所示。注意看(a)、(b)编号与图关系。}
+
+
+\subsubsection{横排多图竖排布局}
+
+
+
+\begin{figure}[!htb]
+    \centering
+    \begin{subfigure}[t]{0.3\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=0.45\linewidth]{csu.png}
+        \includegraphics[width=0.45\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}\\
+    \begin{subfigure}[t]{0.3\linewidth}
+    	\captionsetup{justification=centering} %子图caption居中
+        \begin{minipage}[b]{1\linewidth}
+        \includegraphics[width=0.45\linewidth]{csu.png}
+        \includegraphics[width=0.45\linewidth]{csu.png}
+        \caption{}
+        \end{minipage}
+    \end{subfigure}
+    \caption{横排多图竖排布局，斜体emph \emph{A}，A，斜体texit \textit{A}}
+    \label{F.csu_row_col}
+\end{figure}
+
+\textbf{横排多图竖排布局如图\ref{F.csu_row_col}所示。注意看(a)、(b)编号与图关系。}
+
+\subsection{本章小结}
+本章示例图片布局。
+
+\clearpage
+
+
+\section{表格插入示例}
+
+\begin{table}[htb]
+  \centering
+  \caption{表格为三线表斜体emph \emph{A}，A，斜体texit \textit{A}}
+  \label{T.example}
+  \begin{tabular}{llllll}
+  \toprule
+    & \emph{A}A \textit{A}  & B  & C  & D  & E \\
+  \midrule
+1 	& 212 & 414 & 4 		& 23 & fgw	\\
+2 	& 212 & 414 & v 		& 23 & fgw	\\
+3 	& 212 & 414 & vfwe		& 23 & 嗯	\\
+4 	& 212 & 414 & 4fwe		& 23 & 嗯	\\
+5 	& af2 & 4vx & 4 		& 23 & fgw	\\
+6 	& af2 & 4vx & 4 		& 23 & fgw	\\
+7 	& 212 & 414 & 4 		& 23 & fgw	\\
+\bottomrule
+
+\end{tabular}
+\end{table}
+
+\textbf{表格如表\ref{T.example}所示，latex表格技巧很多，这里不再详细介绍。}
+
+
+
+\clearpage
+
+\section{算法示例}
+
+
+\begin{algorithm}  
+	\caption{Fourier-Mellin Based KCF}  
+	\label{alg:A}  
+	\hspace*{0.02in}{\bf Input:}
+	Image $I$\\preprocessed kernelized template $T_\kappa$\\
+	\hspace*{0.02in}{\bf Output:} 
+	scale $\sigma$, angle $\theta$ relation between $I$ and $T$ 
+	
+	\begin{algorithmic}[1] 
+		\STATE{fourier transform: $F=\mathcal{F}(I)$}
+		\STATE {high pass filter: $F_h=\mathcal{H}(F)$\\$\mathcal{H}(x,y)=(1.0-cos(\pi x)cos(\pi y))(2.0-cos(\pi x)cos(\pi y))$}
+		\STATE {log-polar transform: $F_{lp}=\mathcal{L}(F_h)$}
+		\STATE {apply kernel function: $F_\kappa=\mathcal{K}(F_{lp})$}
+		\STATE {phase correlation: $(\Delta x, \Delta y)=\mathcal{C}(F_\kappa, T_\kappa)$}
+		\STATE {resolove scale and rotation:\\
+			$\theta=\alpha \Delta x$, $\sigma=log(\Delta y)$\\
+			where $\alpha$ is translation factor of pixel translation on fourier domain and polar angle on origin image
+		}
+	\end{algorithmic}  
+\end{algorithm}
+
+
+  \begin{algorithm}
+	\caption{算法示例}
+	\label{alg:SPSH01}
+	\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+	\renewcommand{\algorithmicensure}{\textbf{Output:}}
+	
+	\begin{algorithmic}[1]
+		\REQUIRE 相关输入。。。。
+		
+		\ENSURE 相关输出。。。
+		
+		\STATE 算法描述  % 只占用一个行号
+		\FOR{$i \gets 1\cdots N$}
+		\STATE 算法描述
+		\FOR{\textbf{each} $j \gets 1\cdots K$}
+		\STATE 算法描述
+		\ENDFOR
+		\ENDFOR
+		\REPEAT
+		\REPEAT
+		\STATE 令$\tau\gets\tau+1$
+		\UNTIL 内循环迭代终止条件
+		\STATE 。。。
+		\UNTIL 外循环迭代终止条件
+	\end{algorithmic}
+\end{algorithm}
+
+\textbf{如算法\ref{alg:A}所示，latex算法技巧很多。按需调整，这里不再详细介绍。}
+
+\clearpage
+
+\section{公式、定理、证明插入示例}
+
+\begin{flalign}
+\text{P1: } &\min_{\eta,R_u>0,R_d>0}\big\{ T_{\text{latency}}(\eta,R_u,R_d)\big\}  \\
+&\text{s.t. }   0 \leq \eta \leq 1 \label{P1C1} 
+\end{flalign}
+
+\textbf{公式插入示例如公式(\ref{E.example})所示。}
+
+\begin{equation}
+\gamma_{x}=
+\left\{
+  \begin{array}{lr}
+  0, & {\rm if}~~\;|x| \leq \delta \\
+  x, & {\rm otherwise}
+  \end{array}
+\right.
+\label{E.example}
+\end{equation}
+
+\begin{flalign}
+&\text{P1:} \max_{\bigg\{\substack{P_{m,i},P_{n,i}\\
+		q_{m,i},q_{n,i}\\ \forall n,m,i}\bigg\}}\big[R_{\text{sum}}(P_{m,i},P_{n,i},q_{m,i},q_{n,i},\forall n,m,i)\big],  \\
+& \text{s.t.}~~q_{m,i}\in(0,1), q_{n,i}\in(0,1), \forall n,m,i, \label{allocons1} \\
+& \hspace{1.5em} ~0\leq \sum_{i=1}^Rq_{n,i}P_{n,i}\leq P_n^{sum}, \forall n, \label{powercons1}  \\ 
+& \hspace{1.5em} ~0\leq \sum_{i=1}^Rq_{m,i}P_{m,i}\leq P_m^{sum}, \forall m, \label{powercons2} \\ 
+& \hspace{1.5em} ~\sum_{i=1}^Rq_{n,i}\leq 1,\sum_{i=1}^Rq_{m,i}\leq 1,\forall m,n, \label{RBcons} \\ 
+& \hspace{1.5em} ~\sum_{n=1}^Nq_{n,i}\leq 1,\sum_{m=1}^Mq_{m,i}\leq 1,\forall i, \label{RBcons2} \\
+& \hspace{1.5em} ~C_{m,BS,i}(P_{m,i},q_{m,i})\geq\varepsilon_{m,i},\forall m, \label{capcons}
+\end{flalign}
+
+
+  %%%%%%%%%%%%%% 示例 %%%%%%%%%%%%%%%%
+公式子编号示例：
+\begin{subequations}\label{Eq.(3-4)}
+	\renewcommand{\theequation}{\theparentequation-\alph{equation}} % 定义编号方式
+	\begin{align}
+		&\varphi_{n,t}\in\left\{0,1\right\}, \forall n\in\mathcal{N}, t\in\mathcal{N}_{\mathrm{t}}, \label{Eq.(3-4a)} \\
+		&\varphi_{n,t}\in\left\{0,1\right\}, \forall n\in\mathcal{N}, t\in\mathcal{N}_{\mathrm{t}}, \label{Eq.(3-4b)} \\
+		&\varphi_{n,t}\in\left\{0,1\right\}, \forall n\in\mathcal{N}, t\in\mathcal{N}_{\mathrm{t}}, \label{Eq.(3-4c)}
+	\end{align}
+\end{subequations}
+
+其中，公式\ref{Eq.(3-4a)}表示。
+
+\begin{equation}    
+	H_{j}= \mathrm{Concat}(\mathrm{GAP}({F}_{j}),\mathrm{GMP}({F}_{j})),
+\end{equation}
+\begin{equation}    
+	\tilde{H}_{j-1,j}= \mathrm{Concat}(H_{j-1},H_{j}),j=5,
+\end{equation}
+\begin{equation}    
+	p_c^{(i)}=\mathrm{Softmax}(\boldsymbol{P}_\theta(\tilde{H}_{j-1,j})),
+\end{equation}
+
+  %%%%%%%%%% 示例 %%%%%%%%%%%5
+定理和证明环境说明：如”定理”使用小四黑体，编号随章节变化重新编号（如定理4-1），定理内容使用小四宋体，且内容行距与正文一致；”证明”无需编号，且以黑色小方块结尾。
+
+\begin{theorem}\label{theorem1}
+	\setlength{\baselineskip}{20pt}         % 基准行间距
+	\renewcommand{\baselinestretch}{1.0}   % 几倍行间距
+	开始定理。。。
+\end{theorem}
+
+\begin{proof*} %% 证明不编号
+	\setlength{\baselineskip}{20pt}         % 基准行间距
+	\renewcommand{\baselinestretch}{1.0}   % 几倍行间距
+	开始证明。。。
+	$\hfill\blacksquare$ %% 以黑方块结尾
+\end{proof*}
+
+\clearpage
+
+\section{参考文献插入示例}
+
+LaTeX\cite{lamport1994latex}插入参考文献最方便的方式是使用bibliography\cite{pritchard1969statistical}，大多数出版商的论文页面都会有导出bib格式参考文献的链接，建议使用Jabref管理参考文献，把每个文献的bib放入``thesis-references''，然后用bibkey即可插入参考文献。
+
+中文文献\cite{zh-book-1}，注意手动编辑bibkey为英文的即可。
+
+可以将文献标注为右上角\citess{shiweisong2019},只需要在现有的cite后加“ss”即可。
+
+英文会议\cite{Kraus2021Current}, \cite{WuYangLuEtAl2021}.
+
+英文期刊\cite{LuoZengYuanEtAl2016}, \cite{Wu2022Boosting}.
+
+
+\textbf{特别强调：}从Google下载的bib也不一定全是对的，如发现有信息缺失，请下载原文核对。比如已发表的期刊，要包保证年、卷、标。
+
+\textbf{注意：}如发现替换后的参考文献没有更新，请删除主文件夹下xxx.bbl文件，重新编译即可。
+
+\clearpage
+
+
+\section{总结与展望}
+
+\noindent{纯数字编号}
+\begin{enumerate}
+ \item XXXXXXXXXX
+ \label{item1}
+ \item XXXXXXXXXX
+ \item XXXXXXXXXX
+\end{enumerate}
+罗马编号
+\begin{enumerate}[label=(\roman*)]
+ \item XXXXXXXXXX
+ \label{item2}
+ \item XXXXXXXXXX
+ \item XXXXXXXXXX
+\end{enumerate}
+括号编号
+\begin{enumerate}[label=(\arabic*)]
+ \item XXXXXXXXXX
+ \label{item3}
+ \item XXXXXXXXXX
+ \item XXXXXXXXXX
+\end{enumerate}
+半括号编号
+\begin{enumerate}[label=\arabic*)]
+ \item XXXXXXXXXX
+ \label{item4}
+ \item XXXXXXXXXX
+ \item XXXXXXXXXX
+\end{enumerate}
+小字母编号
+\begin{enumerate}[label=\alph*)]
+ \item XXXXXXXXXX
+ \label{item5}
+ \item XXXXXXXXXX
+ \item XXXXXXXXXX
+\end{enumerate}
+
+引用测试,正如\ref{item1}、\ref{item2}、\ref{item3}、\ref{item4}、\ref{item5}所示
+
+\subsection{工作展望}
+手动编号 %（不推荐,无法被交叉引用）
+\par
+本课题针对XX，鉴于XXX，对XX进行了提高，但是XXX，所以有如下XX：
+
+（1）目前XX虽然XX，但是XX仍然XX，所以XX仍然是一个值得XX的问题。
+
+（2）随着XX，XX具有XX的问题，仍值得进一步XX。
+
+（3）本课题在XX有了XX，但是XX的XX还存在XX，所以XX。
+
+
+\clearpage
