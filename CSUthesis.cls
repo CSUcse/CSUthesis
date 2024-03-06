@@ -521,7 +521,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	{~} % 
 	\vspace{-30pt}%
 }
-\preto\subsection{\ifnum\value{subsection}=0\addtocontents{toc}{\addvspace{6pt}}\fi}
+%\preto\subsection{\ifnum\value{subsection}=0\addtocontents{toc}{\addvspace{6pt}}\fi}
 \titleformat{\subsection}{\zihao{4} \songti}{\thesubsection}{1em}{}
 \titlespacing*{\subsection} {0pt}{10pt}{8pt}
 \preto\subsection{\vspace{5pt}}
