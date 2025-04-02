@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%  作者：    wfwufan@csu.euu.cn
+%  作者：    wfwufan@csu.edu.cn
 %  版本：    2020年4月8日
 %  项目主页: https://github.com/CSUcse/CSUthesis
 %  
