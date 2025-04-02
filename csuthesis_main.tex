@@ -40,11 +40,21 @@
 \makecoverpage
 
 \clearpage
+%\mbox{}
+%\clearpage
+
+\ifblindreview	% 盲审不需要扉页和声明页
+
+\setlength{\headheight}{9.6mm}
+\setlength{\footskip}{7.9mm}
+\setlength{\textheight}{681.5pt} % 调整版面高度
 \mbox{}
 \clearpage
 
-\ifblindreview	% 盲审不需要扉页和声明页
 \else
+
+\mbox{}
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 扉页 
 % -----------------------------------------------%
@@ -69,8 +79,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 设置页眉和页脚 %
-\setlength{\headheight}{9.6mm}
-\setlength{\footskip}{7.9mm}
+%\setlength{\headheight}{9.6mm}
+%\setlength{\footskip}{7.9mm}
 \pagestyle{fancy}
 \fancyhf[CF]{\TimesNewRoman \zihao{-5} \thepage} % 所有（奇数和偶数）中间页脚，TimesNewRoman小五号
 
