@@ -402,7 +402,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 	   延缓公开论文延缓到期后适用本授权书，涉密论文在解密后适用本授权书。
 	   
 	   %\vspace{20pt}
-	   本学位论文属于：(请在以下相应方框内打“√”）
+	   本学位论文属于：（请在以下相应方框内打“√”）
 
 	   $\square$ 公开
 
